@@ -42,11 +42,13 @@ INSTALLED_APPS = [
     
     'rest_framework',
     'corsheaders',
+    "drf_spectacular",
 
     'users',
     'vehicles',
     'orders',
     'inquiries',
+    'cart',
 ]
 
 MIDDLEWARE = [
@@ -143,6 +145,8 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
 REST_FRAMEWORK = {
+    
+     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     "DEFAULT_AUTHENTICATION_CLASSES": (
         "rest_framework_simplejwt.authentication.JWTAuthentication",
     ),
@@ -158,4 +162,28 @@ SIMPLE_JWT = {
     "BLACKLIST_AFTER_ROTATION": True,
 
     "AUTH_HEADER_TYPES": ("Bearer",),
+}
+
+SPECTACULAR_SETTINGS = {
+    "TITLE": "MagariHub API",
+    "DESCRIPTION": "API documentation for the MagariHub vehicle marketplace.",
+    "VERSION": "1.0.0",
+
+    "SERVE_INCLUDE_SCHEMA": False,
+
+    "SECURITY": [
+        {
+            "bearerAuth": [],
+        }
+    ],
+
+    "COMPONENTS": {
+        "securitySchemes": {
+            "bearerAuth": {
+                "type": "http",
+                "scheme": "bearer",
+                "bearerFormat": "JWT",
+            }
+        }
+    },
 }

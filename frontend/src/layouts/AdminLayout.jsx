@@ -47,7 +47,7 @@ function AdminLayout({
                     </button>
 
                     <span className="ml-3 font-extrabold text-[#12395B]">
-                        MagariHub Admin
+                        Bingwa Magari Used Admin
                     </span>
 
                 </header>

@@ -1,10 +1,11 @@
-from django.db.models import Q, Sum
+
+from django.db.models import Q, Sum, Count
 
 from rest_framework import viewsets, status
 from rest_framework.permissions import BasePermission, AllowAny, IsAuthenticated
 from rest_framework.decorators import action
 from rest_framework.response import Response
-
+from rest_framework.parsers import MultiPartParser, FormParser, JSONParser
 from .models import (
     Brand,
     VehicleCategory,
@@ -68,6 +69,12 @@ class BrandViewSet(viewsets.ModelViewSet):
 
     permission_classes = [
         IsAdminOrReadOnly
+    ]
+
+    parser_classes = [
+        MultiPartParser,
+        FormParser,
+        JSONParser
     ]
 
 
@@ -264,10 +271,15 @@ class VehicleViewSet(viewsets.ModelViewSet):
         )
 
         if brand:
-
-            queryset = queryset.filter(
-                brand_id=brand
-            )
+            # Check if brand is numeric (ID) or string (name)
+            if brand.isdigit():
+                queryset = queryset.filter(
+                    brand_id=brand
+                )
+            else:
+                queryset = queryset.filter(
+                    brand__name__icontains=brand
+                )
 
         # ----------------------------------------------------
         # CATEGORY
@@ -420,6 +432,107 @@ class VehicleViewSet(viewsets.ModelViewSet):
             )
 
         return queryset
+
+    # ========================================================
+    # GET VEHICLES BY BRAND
+    # ========================================================
+
+    @action(
+        detail=False,
+        methods=['get'],
+        url_path='by-brand/(?P<brand_id>[0-9]+)',
+        permission_classes=[AllowAny]
+    )
+    def get_vehicles_by_brand(self, request, brand_id=None):
+        """
+        Get all vehicles belonging to a specific brand.
+        """
+        try:
+            brand = Brand.objects.get(id=brand_id)
+        except Brand.DoesNotExist:
+            return Response(
+                {"detail": "Brand not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        vehicles = Vehicle.objects.filter(
+            brand=brand,
+            status='available'
+        ).select_related(
+            "brand",
+            "category",
+        ).prefetch_related(
+            "images",
+        ).order_by('-created_at')
+
+        serializer = self.get_serializer(vehicles, many=True)
+
+        return Response({
+            "brand": BrandSerializer(brand).data,
+            "count": vehicles.count(),
+            "vehicles": serializer.data
+        })
+
+    # ========================================================
+    # GET FEATURED BRANDS (with vehicle count)
+    # ========================================================
+
+    @action(
+        detail=False,
+        methods=['get'],
+        url_path='featured-brands',
+        permission_classes=[AllowAny]
+    )
+    def get_featured_brands(self, request):
+        """
+        Get all brands with their vehicle counts.
+        """
+        brands = (
+    Brand.objects
+    .annotate(
+        vehicle_count=Count(
+            "vehicles",
+            filter=Q(
+                vehicles__status="available"
+            )
+        )
+    )
+    .filter(
+        vehicle_count__gt=0
+    )
+    .order_by("-vehicle_count")
+)
+        # Get the first 12 brands with most vehicles
+        featured_brands = brands[:12]
+
+        result = []
+        for brand in featured_brands:
+            # Get primary image from the brand's vehicles
+            primary_image = None
+            vehicle = Vehicle.objects.filter(
+                brand=brand,
+                status='available'
+            ).first()
+            if vehicle:
+                primary_image = vehicle.images.filter(
+                    is_primary=True
+                ).first()
+                if not primary_image:
+                    primary_image = vehicle.images.first()
+
+            result.append({
+                "id": brand.id,
+                "name": brand.name,
+                "logo": brand.logo.url if brand.logo else None,
+                "vehicle_count": brand.vehicle_count,
+                "primary_image": {
+                    "id": primary_image.id if primary_image else None,
+                    "image": primary_image.image.url if primary_image else None
+                } if primary_image else None
+            })
+
+        return Response(result)
+
 
     # ========================================================
     # UPLOAD VEHICLE IMAGES

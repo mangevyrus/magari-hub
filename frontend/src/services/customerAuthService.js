@@ -88,6 +88,10 @@ export const loginCustomer = async (
         data.refresh
     );
 
+    window.dispatchEvent(                             //notify the Navbar when authentication changes.
+    new Event("customer-auth-changed")
+);
+
     return data;
 };
 
@@ -107,6 +111,12 @@ export const logoutCustomer = () => {
     localStorage.removeItem(
         "customer_refresh_token"
     );
+
+    
+    window.dispatchEvent(                                     //notify the Navbar when authentication changes.
+        new Event("customer-auth-changed")
+    );
+
 };
 
 
@@ -318,7 +328,7 @@ export const refreshCustomerAccessToken =
         }
 
         const response = await fetch(
-            `${API_URL}/token/refresh/`,
+            `${API_URL}/auth/token/refresh/`,
             {
                 method: "POST",
 
@@ -355,7 +365,57 @@ export const refreshCustomerAccessToken =
                 "customer_refresh_token",
                 data.refresh
             );
+
+
+
+            
         }
 
         return data.access;
     };
+
+
+
+export const changeCustomerPassword = async (
+    current_password,
+    new_password,
+    confirm_password
+) => {
+    const token = getCustomerAccessToken();
+
+    if (!token) {
+        throw new Error("You are not logged in.");
+    }
+
+    const response = await fetch(
+        `${API_URL}/auth/change-password/`,
+        {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                Authorization: `Bearer ${token}`,
+            },
+            body: JSON.stringify({
+                current_password,
+                new_password,
+                confirm_password,
+            }),
+        }
+    );
+
+    const data = await response.json();
+
+    if (!response.ok) {
+        throw new Error(
+            data.detail ||
+                data.message ||
+                Object.values(data)
+                    .flat()
+                    .join(" ") ||
+                "Failed to change password."
+        );
+    }
+
+    return data;
+};
+

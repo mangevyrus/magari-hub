@@ -37,7 +37,7 @@ function AdminSettings() {
     const [showConfirm, setShowConfirm] = useState(false);
 
     const [dealership, setDealership] = useState({
-        name: "MagariHub",
+        name: "Bingwa Magari Used",
         phone: "",
         email: "",
         location: "",
@@ -189,21 +189,21 @@ function AdminSettings() {
 
         <AdminLayout>
 
-            {/* HEADER */}
+            {/* HEADER - DEEP REDISH */}
 
-            <header className="border-b border-blue-100 bg-white">
+            <header className="border-b border-[#8B1A1A]/20 bg-white">
 
                 <div className="mx-auto max-w-7xl px-5 py-7 md:px-8">
 
-                    <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#2F80C0]">
-                        MagariHub Admin
+                    <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8B1A1A]">
+                        Bingwa Magari Used Admin
                     </p>
 
-                    <h1 className="mt-1 text-3xl font-extrabold text-[#12395B]">
+                    <h1 className="mt-1 text-3xl font-extrabold text-[#2D1B0E]">
                         Settings
                     </h1>
 
-                    <p className="mt-1 text-sm text-slate-500">
+                    <p className="mt-1 text-sm text-[#6A5A4A]">
                         Manage your administrator account and dealership settings.
                     </p>
 
@@ -247,11 +247,11 @@ function AdminSettings() {
                 <div className="grid gap-8 lg:grid-cols-[250px_1fr]">
 
 
-                    {/* SIDEBAR */}
+                    {/* SIDEBAR - DEEP REDISH */}
 
-                    <aside className="h-fit rounded-2xl border border-blue-100 bg-white p-3 shadow-sm">
+                    <aside className="h-fit rounded-2xl border border-[#8B1A1A]/20 bg-white p-3 shadow-sm">
 
-                        <SettingsTab
+                        <SettingsTabRed
                             icon={User}
                             label="Profile"
                             active={activeTab === "profile"}
@@ -260,7 +260,7 @@ function AdminSettings() {
                             }
                         />
 
-                        <SettingsTab
+                        <SettingsTabRed
                             icon={Lock}
                             label="Security"
                             active={activeTab === "security"}
@@ -269,7 +269,7 @@ function AdminSettings() {
                             }
                         />
 
-                        <SettingsTab
+                        <SettingsTabRed
                             icon={Building2}
                             label="Dealership"
                             active={activeTab === "dealership"}
@@ -278,7 +278,7 @@ function AdminSettings() {
                             }
                         />
 
-                        <SettingsTab
+                        <SettingsTabRed
                             icon={Bell}
                             label="Notifications"
                             active={activeTab === "notifications"}
@@ -292,7 +292,7 @@ function AdminSettings() {
 
                     {/* CONTENT */}
 
-                    <section className="rounded-2xl border border-blue-100 bg-white shadow-sm">
+                    <section className="rounded-2xl border border-[#8B1A1A]/20 bg-white shadow-sm">
 
 
                         {/* PROFILE */}
@@ -301,14 +301,14 @@ function AdminSettings() {
 
                             <div className="p-6 md:p-8">
 
-                                <SettingsHeader
+                                <SettingsHeaderRed
                                     title="Admin Profile"
                                     description="Update your administrator account information."
                                 />
 
                                 <div className="mt-8 grid gap-5 md:grid-cols-2">
 
-                                    <Input
+                                    <InputRed
                                         label="First Name"
                                         value={profile.first_name}
                                         onChange={(e) =>
@@ -320,7 +320,7 @@ function AdminSettings() {
                                         placeholder="First name"
                                     />
 
-                                    <Input
+                                    <InputRed
                                         label="Last Name"
                                         value={profile.last_name}
                                         onChange={(e) =>
@@ -332,7 +332,7 @@ function AdminSettings() {
                                         placeholder="Last name"
                                     />
 
-                                    <Input
+                                    <InputRed
                                         label="Username"
                                         value={profile.username}
                                         onChange={(e) =>
@@ -344,7 +344,7 @@ function AdminSettings() {
                                         placeholder="Username"
                                     />
 
-                                    <Input
+                                    <InputRed
                                         label="Email"
                                         type="email"
                                         value={profile.email}
@@ -359,7 +359,7 @@ function AdminSettings() {
 
                                 </div>
 
-                                <SaveButton
+                                <SaveButtonRed
                                     onClick={saveSettings}
                                 />
 
@@ -374,14 +374,14 @@ function AdminSettings() {
 
                             <div className="p-6 md:p-8">
 
-                                <SettingsHeader
+                                <SettingsHeaderRed
                                     title="Security"
                                     description="Change your administrator password."
                                 />
 
                                 <div className="mt-8 max-w-xl space-y-5">
 
-                                    <PasswordInput
+                                    <PasswordInputRed
                                         label="Current Password"
                                         value={
                                             password.current_password
@@ -396,7 +396,7 @@ function AdminSettings() {
                                         }
                                     />
 
-                                    <PasswordInput
+                                    <PasswordInputRed
                                         label="New Password"
                                         value={
                                             password.new_password
@@ -411,7 +411,7 @@ function AdminSettings() {
                                         }
                                     />
 
-                                    <PasswordInput
+                                    <PasswordInputRed
                                         label="Confirm New Password"
                                         value={
                                             password.confirm_password
@@ -430,7 +430,7 @@ function AdminSettings() {
 
                                 <button
                                     onClick={changePassword}
-                                    className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#12395B] px-6 py-3.5 font-bold text-white shadow-lg shadow-blue-900/10 transition hover:bg-[#2F80C0]"
+                                    className="mt-7 inline-flex items-center gap-2 rounded-xl bg-[#8B1A1A] px-6 py-3.5 font-bold text-white shadow-lg shadow-[#8B1A1A]/20 transition hover:bg-[#6B1515] hover:shadow-xl hover:shadow-[#8B1A1A]/30"
                                 >
 
                                     <Lock size={18} />
@@ -450,14 +450,14 @@ function AdminSettings() {
 
                             <div className="p-6 md:p-8">
 
-                                <SettingsHeader
+                                <SettingsHeaderRed
                                     title="Dealership Information"
-                                    description="Manage the information displayed throughout MagariHub."
+                                    description="Manage the information displayed throughout Bingwa Magari Used."
                                 />
 
                                 <div className="mt-8 grid gap-5 md:grid-cols-2">
 
-                                    <Input
+                                    <InputRed
                                         label="Business Name"
                                         value={dealership.name}
                                         onChange={(e) =>
@@ -468,7 +468,7 @@ function AdminSettings() {
                                         }
                                     />
 
-                                    <Input
+                                    <InputRed
                                         label="Phone"
                                         value={dealership.phone}
                                         onChange={(e) =>
@@ -480,7 +480,7 @@ function AdminSettings() {
                                         placeholder="+255..."
                                     />
 
-                                    <Input
+                                    <InputRed
                                         label="Business Email"
                                         value={dealership.email}
                                         onChange={(e) =>
@@ -489,10 +489,10 @@ function AdminSettings() {
                                                 e.target.value
                                             )
                                         }
-                                        placeholder="info@magarihub.com"
+                                        placeholder="info@bingwamagari.com"
                                     />
 
-                                    <Input
+                                    <InputRed
                                         label="Location"
                                         value={dealership.location}
                                         onChange={(e) =>
@@ -508,7 +508,7 @@ function AdminSettings() {
 
                                 <div className="mt-5">
 
-                                    <label className="mb-2 block text-sm font-bold text-[#12395B]">
+                                    <label className="mb-2 block text-sm font-bold text-[#2D1B0E]">
                                         Business Description
                                     </label>
 
@@ -524,21 +524,21 @@ function AdminSettings() {
                                         }
                                         rows="5"
                                         placeholder="Tell customers about your dealership..."
-                                        className="w-full rounded-xl border border-blue-100 bg-[#F5F9FC] px-4 py-3 text-sm outline-none transition focus:border-[#2F80C0] focus:ring-4 focus:ring-blue-100"
+                                        className="w-full rounded-xl border border-[#8B1A1A]/20 bg-[#FDF8F5] px-4 py-3 text-sm outline-none transition focus:border-[#8B1A1A] focus:ring-4 focus:ring-[#8B1A1A]/10"
                                     />
 
                                 </div>
 
 
-                                <div className="mt-8 border-t border-blue-50 pt-7">
+                                <div className="mt-8 border-t border-[#8B1A1A]/10 pt-7">
 
-                                    <h3 className="font-extrabold text-[#12395B]">
+                                    <h3 className="font-extrabold text-[#2D1B0E]">
                                         Vehicle Defaults
                                     </h3>
 
                                     <div className="mt-5 grid gap-5 md:grid-cols-2">
 
-                                        <Select
+                                        <SelectRed
                                             label="Default Vehicle Status"
                                             value={
                                                 vehicleSettings.default_status
@@ -556,7 +556,7 @@ function AdminSettings() {
                                             ]}
                                         />
 
-                                        <Select
+                                        <SelectRed
                                             label="Currency"
                                             value={
                                                 vehicleSettings.currency
@@ -577,7 +577,7 @@ function AdminSettings() {
 
                                 </div>
 
-                                <SaveButton
+                                <SaveButtonRed
                                     onClick={saveSettings}
                                 />
 
@@ -592,14 +592,14 @@ function AdminSettings() {
 
                             <div className="p-6 md:p-8">
 
-                                <SettingsHeader
+                                <SettingsHeaderRed
                                     title="Notifications"
                                     description="Choose which admin notifications you want to receive."
                                 />
 
                                 <div className="mt-8 space-y-3">
 
-                                    <NotificationRow
+                                    <NotificationRowRed
                                         title="New Vehicle Added"
                                         description="Notify me when a vehicle is added to inventory."
                                         checked={
@@ -612,7 +612,7 @@ function AdminSettings() {
                                         }
                                     />
 
-                                    <NotificationRow
+                                    <NotificationRowRed
                                         title="Vehicle Sold"
                                         description="Notify me when a vehicle is marked as sold."
                                         checked={
@@ -625,7 +625,7 @@ function AdminSettings() {
                                         }
                                     />
 
-                                    <NotificationRow
+                                    <NotificationRowRed
                                         title="Vehicle Reserved"
                                         description="Notify me when a customer reserves a vehicle."
                                         checked={
@@ -638,9 +638,9 @@ function AdminSettings() {
                                         }
                                     />
 
-                                    <NotificationRow
+                                    <NotificationRowRed
                                         title="System Updates"
-                                        description="Receive important MagariHub system updates."
+                                        description="Receive important system updates."
                                         checked={
                                             notifications.system_updates
                                         }
@@ -653,7 +653,7 @@ function AdminSettings() {
 
                                 </div>
 
-                                <SaveButton
+                                <SaveButtonRed
                                     onClick={saveSettings}
                                 />
 
@@ -673,10 +673,10 @@ function AdminSettings() {
 
 
 /* ========================================================= */
-/* COMPONENTS */
+/* COMPONENTS - DEEP REDISH */
 /* ========================================================= */
 
-function SettingsTab({
+function SettingsTabRed({
     icon: Icon,
     label,
     active,
@@ -689,8 +689,8 @@ function SettingsTab({
             onClick={onClick}
             className={`flex w-full items-center gap-3 rounded-xl px-4 py-3.5 text-left text-sm font-bold transition ${
                 active
-                    ? "bg-[#EAF6FF] text-[#2F80C0]"
-                    : "text-slate-500 hover:bg-[#F5F9FC] hover:text-[#12395B]"
+                    ? "bg-[#8B1A1A]/10 text-[#8B1A1A]"
+                    : "text-[#6A5A4A] hover:bg-[#FDF8F5] hover:text-[#2D1B0E]"
             }`}
         >
 
@@ -703,20 +703,20 @@ function SettingsTab({
 }
 
 
-function SettingsHeader({
+function SettingsHeaderRed({
     title,
     description,
 }) {
 
     return (
 
-        <div className="border-b border-blue-50 pb-6">
+        <div className="border-b border-[#8B1A1A]/10 pb-6">
 
-            <h2 className="text-2xl font-extrabold text-[#12395B]">
+            <h2 className="text-2xl font-extrabold text-[#2D1B0E]">
                 {title}
             </h2>
 
-            <p className="mt-1 text-sm text-slate-500">
+            <p className="mt-1 text-sm text-[#6A5A4A]">
                 {description}
             </p>
 
@@ -725,7 +725,7 @@ function SettingsHeader({
 }
 
 
-function Input({
+function InputRed({
     label,
     type = "text",
     value,
@@ -737,7 +737,7 @@ function Input({
 
         <div>
 
-            <label className="mb-2 block text-sm font-bold text-[#12395B]">
+            <label className="mb-2 block text-sm font-bold text-[#2D1B0E]">
                 {label}
             </label>
 
@@ -746,7 +746,7 @@ function Input({
                 value={value}
                 onChange={onChange}
                 placeholder={placeholder}
-                className="w-full rounded-xl border border-blue-100 bg-[#F5F9FC] px-4 py-3 text-sm outline-none transition focus:border-[#2F80C0] focus:ring-4 focus:ring-blue-100"
+                className="w-full rounded-xl border border-[#8B1A1A]/20 bg-[#FDF8F5] px-4 py-3 text-sm outline-none transition focus:border-[#8B1A1A] focus:ring-4 focus:ring-[#8B1A1A]/10"
             />
 
         </div>
@@ -754,7 +754,7 @@ function Input({
 }
 
 
-function PasswordInput({
+function PasswordInputRed({
     label,
     value,
     show,
@@ -766,7 +766,7 @@ function PasswordInput({
 
         <div>
 
-            <label className="mb-2 block text-sm font-bold text-[#12395B]">
+            <label className="mb-2 block text-sm font-bold text-[#2D1B0E]">
                 {label}
             </label>
 
@@ -780,7 +780,7 @@ function PasswordInput({
                     }
                     value={value}
                     onChange={onChange}
-                    className="w-full rounded-xl border border-blue-100 bg-[#F5F9FC] px-4 py-3 pr-12 text-sm outline-none transition focus:border-[#2F80C0] focus:ring-4 focus:ring-blue-100"
+                    className="w-full rounded-xl border border-[#8B1A1A]/20 bg-[#FDF8F5] px-4 py-3 pr-12 text-sm outline-none transition focus:border-[#8B1A1A] focus:ring-4 focus:ring-[#8B1A1A]/10"
                 />
 
                 <button
@@ -788,7 +788,7 @@ function PasswordInput({
                     onClick={() =>
                         setShow(!show)
                     }
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-[#2F80C0]"
+                    className="absolute right-3 top-1/2 -translate-y-1/2 text-[#8A7A6A] hover:text-[#8B1A1A]"
                 >
 
                     {show
@@ -805,7 +805,7 @@ function PasswordInput({
 }
 
 
-function Select({
+function SelectRed({
     label,
     value,
     onChange,
@@ -816,14 +816,14 @@ function Select({
 
         <div>
 
-            <label className="mb-2 block text-sm font-bold text-[#12395B]">
+            <label className="mb-2 block text-sm font-bold text-[#2D1B0E]">
                 {label}
             </label>
 
             <select
                 value={value}
                 onChange={onChange}
-                className="w-full rounded-xl border border-blue-100 bg-[#F5F9FC] px-4 py-3 text-sm font-semibold text-[#12395B] outline-none focus:border-[#2F80C0]"
+                className="w-full rounded-xl border border-[#8B1A1A]/20 bg-[#FDF8F5] px-4 py-3 text-sm font-semibold text-[#2D1B0E] outline-none focus:border-[#8B1A1A] focus:ring-4 focus:ring-[#8B1A1A]/10"
             >
 
                 {options.map(
@@ -846,7 +846,7 @@ function Select({
 }
 
 
-function SaveButton({
+function SaveButtonRed({
     onClick,
 }) {
 
@@ -854,7 +854,7 @@ function SaveButton({
 
         <button
             onClick={onClick}
-            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#12395B] px-6 py-3.5 font-bold text-white shadow-lg shadow-blue-900/10 transition hover:bg-[#2F80C0]"
+            className="mt-8 inline-flex items-center gap-2 rounded-xl bg-[#8B1A1A] px-6 py-3.5 font-bold text-white shadow-lg shadow-[#8B1A1A]/20 transition hover:bg-[#6B1515] hover:shadow-xl hover:shadow-[#8B1A1A]/30"
         >
 
             <Save size={18} />
@@ -866,7 +866,7 @@ function SaveButton({
 }
 
 
-function NotificationRow({
+function NotificationRowRed({
     title,
     description,
     checked,
@@ -875,15 +875,15 @@ function NotificationRow({
 
     return (
 
-        <div className="flex items-center justify-between gap-5 rounded-xl border border-blue-50 bg-[#F8FCFF] p-4">
+        <div className="flex items-center justify-between gap-5 rounded-xl border border-[#8B1A1A]/10 bg-[#FDF8F5] p-4">
 
             <div>
 
-                <p className="font-bold text-[#12395B]">
+                <p className="font-bold text-[#2D1B0E]">
                     {title}
                 </p>
 
-                <p className="mt-1 text-sm text-slate-500">
+                <p className="mt-1 text-sm text-[#6A5A4A]">
                     {description}
                 </p>
 
@@ -893,8 +893,8 @@ function NotificationRow({
                 onClick={onChange}
                 className={`relative h-6 w-11 shrink-0 rounded-full transition ${
                     checked
-                        ? "bg-[#2F80C0]"
-                        : "bg-slate-300"
+                        ? "bg-[#8B1A1A]"
+                        : "bg-[#D4A8A8]"
                 }`}
             >
 

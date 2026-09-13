@@ -108,8 +108,9 @@ function AdminSidebar({ mobileOpen, setMobileOpen }) {
 
                             <h1 className="text-xl font-black tracking-tight text-white">
                                 Magari<span className="text-[#A9DCFF]">Hub</span>
+                                
                             </h1>
-
+ 
                             <p className="text-[10px] font-medium uppercase tracking-wider text-blue-200">
                                 Admin Panel
                             </p>

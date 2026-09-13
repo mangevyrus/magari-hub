@@ -1,0 +1,999 @@
+
+{
+    "nav": {
+        "home": "Nyumbani",
+        "buy": "Nunua",
+        "sell": "Uza",
+        "vehicles": "Magari",
+        "viewCart": "Angalia Kikapu",
+        "viewOrders": "Angalia Maagizo",
+        "login": "Ingia",
+        "register": "Jisajili",
+        "logout": "Toka",
+        "loggingOut": "Inatoka...",
+        "account": "Akaunti",
+        "language": "Lugha"
+    },
+
+    "language": {
+        "swahili": "Kiswahili",
+        "english": "English"
+    },
+
+    "vehicles": {
+        "hero": {
+            "badge": "Soko la Magari Bora",
+            "title": "Tafuta",
+            "titleHighlight": "gari lako bora.",
+            "description": "Chunguza magari bora kutoka kwa wauzaji wanaoaminika. Tafuta, linganisha na gundua gari lako lijalo kwa kujiamini.",
+            "searchPlaceholder": "Tafuta Toyota, BMW, Land Cruiser..."
+        },
+
+        "filters": {
+            "button": "Vichujio",
+            "brand": "Chapa",
+            "category": "Aina ya Gari",
+            "fuelType": "Aina ya Mafuta",
+            "transmission": "Gearbox",
+            "condition": "Hali ya Gari",
+            "all": "Zote",
+            "allBrands": "Chapa Zote",
+            "allCategories": "Aina Zote",
+            "allFuels": "Mafuta Yote",
+            "minPrice": "Bei ya Chini",
+            "maxPrice": "Bei ya Juu",
+            "minPricePlaceholder": "Bei ya chini",
+            "maxPricePlaceholder": "Bei ya juu",
+            "apply": "Tumia Vichujio",
+            "reset": "Weka Upya Vyote",
+
+            "fuelOptions": {
+                "petrol": "Petrol",
+                "diesel": "Diesel",
+                "hybrid": "Hybrid",
+                "electric": "Umeme"
+            },
+
+            "transmissionOptions": {
+                "automatic": "Automatic",
+                "manual": "Manual"
+            },
+
+            "conditionOptions": {
+                "new": "Mpya",
+                "used": "Imetumika"
+            },
+
+            "sortOptions": {
+                "newest": "Mpya Zaidi",
+                "priceLow": "Bei: Ndogo hadi Kubwa",
+                "priceHigh": "Bei: Kubwa hadi Ndogo",
+                "oldest": "Kongwe Zaidi"
+            }
+        },
+
+        "results": {
+            "vehicleCount": "magari"
+        },
+
+        "activeFilters": {
+            "brand": "Chapa",
+            "category": "Aina",
+            "fuel": "Mafuta",
+            "condition": "Hali",
+            "min": "Kima cha Chini",
+            "max": "Kima cha Juu",
+            "transmission": "Gearbox"
+        },
+
+        "empty": {
+            "title": "Hakuna magari yaliyopatikana",
+            "description": "Hatukuweza kupata magari yanayolingana na utafutaji na vichujio vyako. Jaribu kubadilisha vigezo vyako.",
+            "reset": "Weka Upya Utafutaji"
+        }
+    },
+
+"register": {
+    "title": "Fungua Akaunti Yako",
+    "subtitle": "Jiunge na Bingwa Magari Used na uanze kuchunguza magari bora yenye ubora.",
+    "firstName": "Jina la Kwanza",
+    "firstNamePlaceholder": "John",
+    "lastName": "Jina la Mwisho",
+    "lastNamePlaceholder": "Mange",
+    "username": "Jina la Mtumiaji",
+    "usernamePlaceholder": "smilingvyrus",
+    "email": "Barua Pepe",
+    "emailPlaceholder": "johnmange@example.com",
+    "password": "Nenosiri",
+    "passwordPlaceholder": "Angalau herufi 8",
+    "confirmPassword": "Thibitisha Nenosiri",
+    "confirmPasswordPlaceholder": "Rudia nenosiri lako",
+    "creatingAccount": "Inaunda akaunti...",
+    "createAccount": "Fungua Akaunti",
+    "haveAccount": "Tayari una akaunti?",
+    "login": "Ingia",
+    "success": "Akaunti yako imeundwa kwa mafanikio.",
+    "errors": {
+        "passwordMismatch": "Nenosiri halilingani.",
+        "passwordLength": "Nenosiri lazima liwe na angalau herufi 8.",
+        "failed": "Usajili umeshindikana."
+    }
+},
+
+
+ 
+"account": {
+    "loading": "Inapakia akaunti yako...",
+    "badge": "Akaunti Yangu",
+    "welcome": "Karibu Tena",
+    "description": "Simamia akaunti yako ya Bingwa Magari Used na taarifa zako binafsi.",
+    "quickActions": {
+        "title": "Vitendo vya Haraka",
+        "browse": {
+            "title": "Angalia Magari",
+            "description": "Tafuta gari lako lijalo"
+        },
+        "orders": {
+            "title": "Oda Zangu",
+            "description": "Fuatilia manunuzi yako"
+        },
+        "inquiries": {
+            "title": "Maswali Yangu",
+            "description": "Angalia maswali na majibu kuhusu magari"
+        },
+        "cart": {
+            "title": "Kikapu Changu",
+            "description": "Angalia magari uliyohifadhi"
+        },
+        "settings": {
+            "title": "Mipangilio ya Akaunti",
+            "description": "Sasisha taarifa zako"
+        },
+        "favourites": {
+            "title": "Vipendwa",
+            "description": "Magari uliyohifadhi"
+        }
+    },
+    "logout": {
+        "title": "Ondoka",
+        "description": "Toka kwenye akaunti yako"
+    },
+    "marketplace": {
+        "title": "Pata gari lako lijalo.",
+        "description": "Chunguza soko letu na ugundue magari yanayolingana na unachotafuta.",
+        "button": "Chunguza Magari"
+    },
+    "personal": {
+        "title": "Taarifa Binafsi",
+        "subtitle": "Maelezo ya akaunti",
+        "edit": "Hariri",
+        "name": "Jina",
+        "email": "Barua Pepe",
+        "phone": "Simu",
+        "location": "Mahali",
+        "notProvided": "Haijawekwa",
+        "memberSince": "Mwanachama tangu"
+    }
+    },
+"sellCar": {
+    "backToVehicles": "Rudi kwenye Magari",
+    "hero": {
+        "badge": "Uza Gari Lako",
+        "title": "Geuza Gari Lako Kuwa",
+        "highlight": "Mauzo Mazuri",
+        "description": "Weka gari lako kwenye Bingwa Magari Used na uwafikie watu wanaotafuta gari lao lijalo.",
+        "startButton": "Anza Kuuza",
+        "browseButton": "Angalia Magari"
+    },
+    "process": {
+        "eyebrow": "Jinsi Inavyofanya Kazi",
+        "title": "Kuuza gari lako ni rahisi",
+        "description": "Tupe taarifa za gari lako na tutakusaidia kulifikisha mbele ya wanunuzi wanaoweza kulihitaji.",
+        "steps": {
+            "details": {
+                "title": "Tuambie kuhusu gari lako",
+                "description": "Weka taarifa sahihi kuhusu gari lako, bei unayoomba na eneo lilipo."
+            },
+            "review": {
+                "title": "Tunakagua tangazo lako",
+                "description": "Timu yetu itakagua taarifa ulizowasilisha kabla gari halijachapishwa."
+            },
+            "sell": {
+                "title": "Wasiliana na wanunuzi",
+                "description": "Baada ya gari lako kuwekwa kwenye mfumo, wanunuzi wanaovutiwa wanaweza kuliona na kuwasiliana nawe."
+            }
+        }
+    },
+    "form": {
+        "eyebrow": "Tangazo la Gari",
+        "title": "Tuambie kuhusu gari lako",
+        "description": "Weka taarifa zifuatazo ili tuweze kuandaa tangazo la gari lako.",
+        "seller": {
+            "title": "Taarifa za Muuzaji",
+            "description": "Wanunuzi wanaweza kukupataje?"
+        },
+        "vehicle": {
+            "title": "Taarifa za Gari",
+            "description": "Tuambie kuhusu gari unalotaka kuuza."
+        },
+        "fields": {
+            "fullName": "Jina Kamili",
+            "phone": "Namba ya Simu",
+            "email": "Anwani ya Barua Pepe",
+            "location": "Eneo",
+            "brand": "Chapa ya Gari",
+            "model": "Modeli",
+            "year": "Mwaka",
+            "condition": "Hali ya Gari",
+            "mileage": "Kilomita",
+            "price": "Bei Unayoomba (TZS)",
+            "description": "Maelezo ya Gari"
+        },
+        "placeholders": {
+            "fullName": "Weka jina lako kamili",
+            "phone": "+255 7XX XXX XXX",
+            "email": "wewe@example.com",
+            "location": "mf. Dar es Salaam, Kinondoni",
+            "brand": "mf. Toyota",
+            "model": "mf. Harrier",
+            "year": "mf. 2020",
+            "mileage": "mf. 85000",
+            "price": "mf. 45000000",
+            "description": "Eleza hali ya gari, vipengele vyake, historia na taarifa nyingine ambazo wanunuzi wanapaswa kujua..."
+        },
+        "conditions": {
+            "used": "Used",
+            "new": "Jipya",
+            "certified": "Limehakikiwa"
+        },
+        "images": {
+            "title": "Picha za Gari",
+            "description": "Picha nzuri zinawasaidia wanunuzi kuelewa gari lako.",
+            "choose": "Chagua picha za gari",
+            "hint": "Unaweza kuchagua picha nyingi.",
+            "remove": "Ondoa picha"
+        },
+        "privacyNote": "Hakikisha taarifa unazoweka ni sahihi. Taarifa zako za mawasiliano zinaweza kutumika kuwasiliana nawe kuhusu tangazo lako.",
+        "submit": "Wasilisha Gari"
+    },
+    "success": {
+        "title": "Taarifa za gari zimetumwa",
+        "description": "Asante. Tumepokea taarifa za gari lako. Timu yetu itakagua taarifa hizo na kuwasiliana nawe kuhusu hatua zinazofuata.",
+        "submitAnother": "Wasilisha Gari Jingine"
+    },
+    "sidebar": {
+        "title": "Wafikie wanunuzi zaidi",
+        "description": "Bingwa Magari Used huwasaidia wauzaji kuonyesha magari yao kwa watu wanaotafuta magari.",
+        "points": {
+            "reachBuyers": "Wafikie wanunuzi wanaoweza kuhitaji gari",
+            "professionalListing": "Pata tangazo la gari lililoandaliwa kitaalamu",
+            "support": "Pata msaada wakati wa mchakato wa kuuza"
+        },
+        "locationTitle": "Eneo la Gari",
+        "locationDescription": "Waambie wanunuzi gari lilipo.",
+        "contactNote": "Tutawasiliana nawe kuhusu tangazo lako."
+    }
+},
+
+"orderDetails": {
+    "loading": "Inapakia oda...",
+    "errors": {
+        "load": "Imeshindikana kupakia oda."
+    },
+    "notFound": {
+        "title": "Oda haijapatikana",
+        "description": "Hatukuweza kupata oda hii."
+    },
+    "backToOrders": "Rudi kwenye Oda Zangu",
+    "eyebrow": "Maelezo ya Oda",
+    "placedOn": "Iliwekwa tarehe",
+    "vehicle": "Gari",
+    "vehicleFallback": "Gari",
+    "vehiclePrice": "Bei ya Gari",
+    "customerInformation": "Taarifa za Mteja",
+    "fields": {
+        "fullName": "Jina Kamili",
+        "phone": "Simu",
+        "email": "Barua Pepe",
+        "location": "Eneo"
+    },
+    "locationNotSpecified": "Haijaainishwa",
+    "additionalNotes": "Maelezo ya Ziada",
+    "orderSummary": "Muhtasari wa Oda",
+    "summary": {
+        "orderNumber": "Namba ya Oda",
+        "vehicle": "Gari",
+        "fulfillment": "Njia ya Kupokea",
+        "created": "Imeundwa",
+        "lastUpdated": "Imesasishwa Mwisho"
+    },
+    "total": "Jumla",
+    "fulfillment": "Njia ya Kupokea",
+    "fulfillmentOptions": {
+        "pickup": "Kuchukua",
+        "delivery": "Uwasilishaji"
+    },
+    "fulfillmentDescriptions": {
+        "pickup": "Utachukua gari katika eneo lililokubaliwa.",
+        "delivery": "Gari lako litawasilishwa katika eneo uliloweka wakati wa kukamilisha oda."
+    },
+    "currentStatus": "Hali ya Sasa",
+    "statusDescription": "Timu yetu itawasiliana nawe ikiwa taarifa au hatua zaidi zitahitajika.",
+    "status": {
+        "pending": "Inasubiri",
+        "confirmed": "Imethibitishwa",
+        "processing": "Inachakatwa",
+        "completed": "Imekamilika",
+        "cancelled": "Imeghairiwa",
+        "unknown": "Haijulikani"
+    }
+},
+"inquiries": {
+    "backToAccount": "Rudi kwenye Akaunti",
+    "eyebrow": "Eneo la Mteja",
+    "title": "Maswali Yangu",
+    "description": "Fuatilia maswali yako kuhusu magari na majibu yake.",
+    "errors": {
+        "load": "Imeshindikana kupakia maswali."
+    },
+    "empty": {
+        "title": "Bado huna maswali",
+        "description": "Bado hujatuma swali lolote kuhusu gari. Angalia magari yetu na wasiliana na muuzaji unapopata gari unalolipenda.",
+        "browseVehicles": "Angalia Magari"
+    },
+    "vehicleInquiry": "Swali Kuhusu Gari",
+    "yourMessage": "Ujumbe Wako",
+    "adminResponse": "Jibu la Msimamizi",
+    "status": {
+        "responded": "Limejibiwa",
+        "closed": "Limefungwa",
+        "pending": "Linasubiri"
+    }
+},
+"orders": {
+    "loading": "Inapakia oda zako...",
+    "eyebrow": "Akaunti ya Mteja",
+    "title": "Oda Zangu",
+    "description": "Angalia oda zako za magari, hali ya oda na maelezo ya kila oda.",
+    "errors": {
+        "load": "Imeshindikana kupakia oda zako."
+    },
+    "empty": {
+        "title": "Bado huna oda",
+        "description": "Bado hujaweka oda yoyote ya gari. Angalia magari yanayopatikana na weka oda yako ya kwanza.",
+        "browseVehicles": "Angalia Magari"
+    },
+    "orderNumber": "Namba ya Oda",
+    "vehicle": "Gari",
+    "vehicleFallback": "Gari",
+    "orderDate": "Tarehe ya Oda",
+    "fulfillment": "Njia ya Kupokea",
+    "fulfillmentOptions": {
+        "pickup": "Kuchukua",
+        "delivery": "Uwasilishaji"
+    },
+    "location": "Eneo",
+    "locationNotSpecified": "Haijaainishwa",
+    "nextSteps": "Tutawasiliana nawe kuhusu hatua zinazofuata.",
+    "viewOrder": "Angalia Oda",
+    "status": {
+        "pending": "Inasubiri",
+        "confirmed": "Imethibitishwa",
+        "processing": "Inachakatwa",
+        "completed": "Imekamilika",
+        "cancelled": "Imeghairiwa",
+        "unknown": "Haijulikani"
+    }
+},
+"checkout": {
+    "loading": "Inapakia ukurasa wa malipo...",
+
+    "backToCart": "Rudi kwenye Kikapu",
+
+    "header": {
+        "eyebrow": "Malipo ya Bingwa Magari Used",
+        "title": "Kamilisha Oda Yako",
+        "description": "Weka taarifa zako za mawasiliano na uchague jinsi ungependa kupokea gari lako."
+    },
+
+    "customer": {
+        "title": "Taarifa za Mteja",
+        "description": "Weka taarifa tutakazotumia kuwasiliana nawe."
+    },
+
+    "fields": {
+        "fullName": {
+            "label": "Jina Kamili",
+            "placeholder": "Weka jina lako kamili"
+        },
+
+        "phone": {
+            "label": "Namba ya Simu",
+            "placeholder": "+255 7XX XXX XXX"
+        },
+
+        "email": {
+            "label": "Barua Pepe",
+            "placeholder": "you@example.com"
+        },
+
+        "location": {
+            "label": "Mahali",
+            "deliveryLabel": "Mahali pa Kuwasilisha",
+            "placeholder": "mf. Dar es Salaam, Kinondoni"
+        },
+
+        "notes": {
+            "label": "Maelezo ya Ziada",
+            "optional": "(si lazima)",
+            "placeholder": "Kuna jambo lingine ungependa tujue?"
+        }
+    },
+
+    "fulfillment": {
+        "title": "Ungependa kupokea gari kwa njia gani?",
+
+        "pickup": {
+            "title": "Kuchukua",
+            "description": "Chukua gari katika eneo litakalokubaliwa."
+        },
+
+        "delivery": {
+            "title": "Kuwasilishiwa",
+            "description": "Gari litawasilishwa katika eneo lako."
+        }
+    },
+
+    "actions": {
+        "processing": "Inashughulikia Oda...",
+        "confirm": "Thibitisha Oda"
+    },
+
+    "summary": {
+        "eyebrow": "Kikapu Chako",
+        "title": "Muhtasari wa Oda",
+        "vehicles": "Magari",
+        "total": "Jumla",
+        "important": "Muhimu:",
+        "importantDescription": "Oda yako haimaanishi kuwa malipo ya mwisho yamefanyika. Upatikanaji wa gari utathibitishwa kabla ya oda kuthibitishwa.",
+        "editCart": "Hariri Kikapu"
+    },
+
+    "success": {
+        "eyebrow": "Oda Imewasilishwa",
+        "title": "Asante kwa oda yako!",
+        "description": "Oda yako ya gari imewasilishwa kwa mafanikio. Timu yetu itawasiliana nawe hivi karibuni kuthibitisha oda na kupanga hatua zinazofuata.",
+        "orderNumber": "Namba ya Oda",
+        "viewOrders": "Angalia Oda Zangu",
+        "browseVehicles": "Angalia Magari Zaidi"
+    },
+
+    "empty": {
+        "title": "Kikapu chako kiko wazi",
+        "description": "Ongeza gari kabla ya kuendelea na malipo.",
+        "browseVehicles": "Angalia Magari"
+    },
+
+    "validation": {
+        "emptyCart": "Kikapu chako kiko wazi.",
+        "fullName": "Tafadhali weka jina lako kamili.",
+        "phone": "Tafadhali weka namba yako ya simu.",
+        "email": "Tafadhali weka anwani yako ya barua pepe.",
+        "deliveryLocation": "Tafadhali weka eneo la kuwasilisha gari."
+    },
+
+    "errors": {
+        "loadCart": "Imeshindikana kupakia kikapu chako.",
+        "checkoutFailed": "Malipo yameshindikana. Tafadhali jaribu tena.",
+        "vehicleUnavailable": "{{vehicle}} halipatikani tena."
+    },
+
+    "vehicleFallback": "Moja ya magari",
+
+    "orderStatus": {
+        "pending": "Inasubiri",
+        "confirmed": "Imethibitishwa",
+        "processing": "Inashughulikiwa",
+        "completed": "Imekamilika",
+        "cancelled": "Imeghairiwa"
+    }
+},
+
+
+"changePassword": {
+    "backToSettings": "Rudi kwenye Mipangilio ya Akaunti",
+
+    "header": {
+        "eyebrow": "Usalama",
+        "title": "Badilisha Nenosiri",
+        "description": "Sasisha nenosiri lako ili kuweka akaunti yako salama."
+    },
+
+    "messages": {
+        "success": "Nenosiri limebadilishwa kwa mafanikio. Tafadhali ingia tena.",
+        "errorTitle": "Kuna tatizo",
+        "error": "Imeshindikana kubadilisha nenosiri lako."
+    },
+
+    "validation": {
+        "allFields": "Tafadhali jaza sehemu zote za nenosiri.",
+        "minLength": "Nenosiri jipya lazima liwe na angalau herufi 8.",
+        "noMatch": "Nenosiri jipya na uthibitisho wake haviendani.",
+        "different": "Nenosiri lako jipya lazima liwe tofauti na nenosiri lako la sasa."
+    },
+
+    "security": {
+        "title": "Usalama wa Nenosiri",
+        "description": "Tumia nenosiri imara ambalo hutumii sehemu nyingine."
+    },
+
+    "fields": {
+        "current": {
+            "label": "Nenosiri la Sasa"
+        },
+        "new": {
+            "label": "Nenosiri Jipya"
+        },
+        "confirm": {
+            "label": "Thibitisha Nenosiri Jipya"
+        }
+    },
+
+    "requirements": {
+        "title": "Mahitaji ya Nenosiri",
+        "minLength": "Angalau herufi 8",
+        "different": "Liwe tofauti na nenosiri lako la sasa",
+        "avoidGuessing": "Epuka kutumia taarifa ambazo ni rahisi kukisia"
+    },
+
+    "actions": {
+        "cancel": "Ghairi",
+        "changing": "Inabadilisha...",
+        "change": "Badilisha Nenosiri",
+        "showPassword": "Onyesha nenosiri",
+        "hidePassword": "Ficha nenosiri"
+    }
+},
+
+"accountSettings": {
+    "loading": "Inapakia mipangilio yako...",
+
+    "backToAccount": "Rudi kwenye Akaunti Yangu",
+
+    "header": {
+        "eyebrow": "Mipangilio ya Akaunti",
+        "title": "Taarifa Binafsi",
+        "description": "Sasisha taarifa zako binafsi na maelezo ya mawasiliano."
+    },
+
+    "messages": {
+        "success": "Taarifa zako binafsi zimesasishwa kwa mafanikio.",
+        "errorTitle": "Kuna tatizo",
+        "error": "Imeshindikana kusasisha taarifa zako."
+    },
+
+    "account": {
+        "title": "Taarifa za Akaunti",
+        "description": "Maelezo yako ya msingi ya akaunti"
+    },
+
+    "contact": {
+        "title": "Taarifa za Mawasiliano",
+        "description": "Tusaidie kukuwasiliana kuhusu maswali yako ya magari na oda zako"
+    },
+
+    "security": {
+        "title": "Nenosiri na Usalama",
+        "description": "Linda akaunti yako",
+        "changePassword": "Badilisha Nenosiri"
+    },
+
+    "fields": {
+        "firstName": {
+            "label": "Jina la Kwanza",
+            "placeholder": "Weka jina lako la kwanza"
+        },
+
+        "lastName": {
+            "label": "Jina la Mwisho",
+            "placeholder": "Weka jina lako la mwisho"
+        },
+
+        "username": {
+            "label": "Jina la Mtumiaji",
+            "placeholder": "Weka jina lako la mtumiaji"
+        },
+
+        "email": {
+            "label": "Barua Pepe",
+            "placeholder": "barua@pepe.com"
+        },
+
+        "phone": {
+            "label": "Namba ya Simu",
+            "placeholder": "+255..."
+        },
+
+        "location": {
+            "label": "Mahali",
+            "placeholder": "Dar es Salaam, Tanzania"
+        }
+    },
+
+    "actions": {
+        "saving": "Inahifadhi...",
+        "save": "Hifadhi Mabadiliko"
+    }
+},
+
+   
+"cart": {
+    "loading": "Inapakia kikapu chako...",
+    "badge": "Kikapu cha Ununuzi",
+    "title": "Kikapu Chako",
+    "description": "Kagua magari unayotaka kabla ya kuendelea na malipo.",
+    "vehicle": "Gari",
+    "selectedVehicles": "Magari Uliyoyachagua",
+    "vehicleCount": "Magari {{count}} kwenye kikapu chako",
+    "available": "Linapatikana",
+    "unavailable": "Halipatikani kwa sasa",
+    "removing": "Inaondolewa...",
+    "remove": "Ondoa",
+    "continueShopping": "Endelea na Ununuzi",
+    "proceedCheckout": "Endelea na Malipo",
+    "errors": {
+        "loadFailed": "Imeshindikana kupakia kikapu chako.",
+        "removeFailed": "Imeshindikana kuondoa gari kwenye kikapu."
+    },
+    "empty": {
+        "title": "Kikapu Chako Kiko Tupu",
+        "description": "Bado hujaongeza gari lolote kwenye kikapu chako.",
+        "browse": "Angalia Magari"
+    },
+    "summary": {
+        "title": "Muhtasari wa Oda",
+        "vehicles": "Magari",
+        "subtotal": "Jumla Ndogo",
+        "total": "Jumla"
+    },
+    "verificationNotice": "Upatikanaji na bei ya gari vitathibitishwa wakati oda yako itakapowasilishwa."
+},
+
+    "common": {
+        "loading": "Inapakia...",
+        "back": "Rudi",
+        "save": "Hifadhi",
+        "cancel": "Ghairi",
+        "close": "Funga",
+        "search": "Tafuta",
+        "clear": "Ondoa",
+        "clearAll": "Ondoa Vyote",
+        "remove": "Ondoa"
+    },
+
+    "home": {
+        "callUs": "Tupigie +255 711 398 600",
+
+        "heroTitle": "Njia ya Haraka na Rahisi ya",
+        "heroHighlight": "Kununua au Kuuza Magari",
+        "searchPlaceholder": "Tafuta gari unalotaka",
+        "searchButton": "TAFUTA",
+        "activeUsers": "Watumiaji hai",
+
+        "featuredListings": "Magari Maalum",
+        "handpicked": "Magari",
+        "vehicles": "Yaliyochaguliwa",
+        "featuredDescription": "Gundua uteuzi wetu wa magari bora yaliyotumika na kuthibitishwa.",
+        "viewAll": "Angalia Yote",
+
+        "noVehicles": "Hakuna magari yanayopatikana",
+        "newListingsSoon": "Magari mapya yataonekana hapa hivi karibuni.",
+
+        "popularBrands": "Chapa Maarufu",
+        "browseBy": "Tafuta kwa",
+        "brand": "Chapa",
+        "brandDescription": "Gundua magari kutoka kwenye chapa unazozipenda.",
+        "viewAllVehicles": "Angalia Magari Yote",
+        "noBrands": "Hakuna chapa za magari zinazopatikana kwa sasa.",
+
+        "available": "Magari",
+        "brandVehicles": "Yanayopatikana",
+        "clear": "Ondoa",
+
+        "brandNotAvailableTitle": "Chapa Haipatikani",
+        "brandNotAvailable": "Magari ya chapa {{brand}} hayapatikani kwa sasa.",
+        "brandLoadError": "Imeshindikana kupakia magari ya {{brand}}. Tafadhali jaribu tena.",
+
+        "browseAllVehicles": "Angalia Magari Yote",
+        "noVehiclesAvailable": "Hakuna Magari Yanayopatikana",
+        "noBrandVehicles": "Kwa sasa hakuna magari ya {{brand}} yanayopatikana.",
+
+        "whyChooseUs": "Kwa Nini Utuchague",
+        "trusted": "Soko Lako la Kuaminika la",
+        "carMarketplace": "Magari",
+        "trustedDescription": "Tunafanya ununuzi wa magari kuwa rahisi, wazi na salama.",
+
+        "trust": {
+            "verifiedSellers": "Wauzaji Waliothibitishwa",
+            "authentic": "Halisi kwa 100%",
+            "qualityChecked": "Ubora Umekaguliwa",
+            "inspected": "Kila gari limekaguliwa",
+            "expertSupport": "Msaada wa Wataalamu",
+            "support24": "Msaada wa saa 24/7"
+        },
+
+        "features": {
+            "verified": {
+                "title": "100% Imethibitishwa",
+                "description": "Kila gari hukaguliwa na kuthibitishwa kwa kina kabla ya kuwekwa sokoni."
+            },
+
+            "prices": {
+                "title": "Bei Bora",
+                "description": "Bei shindani yenye mfumo wa ada ulio wazi."
+            },
+
+            "community": {
+                "title": "Jamii Inayoaminika",
+                "description": "Jiunge na maelfu ya wateja walioridhika kote Afrika."
+            },
+
+            "process": {
+                "title": "Mchakato wa Haraka",
+                "description": "Tathmini za haraka na mchakato rahisi wa miamala."
+            },
+
+            "guarantee": {
+                "title": "Dhamana ya Ubora",
+                "description": "Dhamana ya miezi 6–12 kwa magari yote yaliyothibitishwa."
+            },
+
+            "support": {
+                "title": "Msaada wa Wataalamu",
+                "description": "Timu yetu ya msaada inapatikana saa 24/7."
+            }
+        },
+
+        "stats": {
+            "customers": "Wateja Walioridhika",
+            "vehicles": "Magari Yanayopatikana",
+            "rating": "Wastani wa Ukadiriaji",
+            "quality": "Ubora Uliothibitishwa"
+        },
+
+        "testimonials": "Maoni ya Wateja",
+        "whatCustomers": "Wateja Wetu",
+        "say": "Wanasema Nini",
+
+        "testimonialsData": {
+            "john": {
+                "quote": "Jukwaa bora zaidi la kununua gari lililotumika Afrika. Mchakato ulikuwa rahisi na gari lilikuwa kama lilivyoelezwa.",
+                "role": "Kenya"
+            },
+
+            "sarah": {
+                "quote": "Niliuza gari langu ndani ya siku 3 baada ya kuliweka kwenye mfumo. Timu ilishughulikia kila kitu kwa weledi.",
+                "role": "Tanzania"
+            },
+
+            "michael": {
+                "quote": "Mchakato wa uthibitishaji ulinipa ujasiri. Ninalipenda gari langu jipya!",
+                "role": "Uganda"
+            }
+        },
+
+        "cta": {
+            "ready": "Uko Tayari Kupata Gari Lako la Ndoto?",
+            "start": "Anza",
+            "journey": "Safari Yako Leo",
+            "description": "Vinjari mkusanyiko wetu na upate gari linalokufaa.",
+            "explore": "Anza Kuchunguza"
+        },
+
+        "footer": {
+            "tagline": "Soko lako la kuaminika la magari.",
+            "privacy": "Faragha",
+            "terms": "Masharti",
+            "contact": "Mawasiliano",
+            "copyright": "© 2026 BINGWA MAGARI USED"
+        }
+    },
+
+"login": {
+    "title": "Karibu Tena",
+    "subtitle": "Ingia kwenye akaunti yako ya Bingwa Magari Used",
+    "username": "Jina la Mtumiaji",
+    "usernamePlaceholder": "Weka jina lako la mtumiaji",
+    "password": "Nenosiri",
+    "passwordPlaceholder": "Weka nenosiri lako",
+    "forgotPassword": "Umesahau nenosiri?",
+    "showPassword": "Onyesha nenosiri",
+    "hidePassword": "Ficha nenosiri",
+    "signingIn": "Inaingia...",
+    "signIn": "Ingia",
+    "noAccount": "Huna akaunti?",
+    "createOne": "Fungua akaunti",
+    "adminQuestion": "Wewe ni msimamizi?",
+    "adminLogin": "Bingwa wa Magari Used",
+    "errors": {
+        "required": "Tafadhali weka jina lako la mtumiaji na nenosiri.",
+        "invalidCredentials": "Jina la mtumiaji au nenosiri si sahihi.",
+        "failed": "Kuingia kumeshindikana. Tafadhali jaribu tena."
+    }
+},
+
+
+    "vehicleDetails": {
+        "breadcrumb": "Rudi kwenye magari",
+
+        "notFound": {
+            "title": "Gari halijapatikana",
+            "back": "Rudi kwenye Magari"
+        },
+
+        "gallery": {
+            "previous": "Picha iliyopita",
+            "next": "Picha inayofuata",
+            "selectImage": "Chagua picha {{number}}"
+        },
+
+        "actions": {
+            "favourite": "Ongeza kwenye vipendwa",
+            "share": "Shiriki gari",
+            "inquiry": "Uliza / Wasiliana na Muuzaji",
+            "whatsapp": "WhatsApp"
+        },
+
+        "price": "Bei ya Kuomba",
+
+        "status": {
+            "available": "Linapatikana",
+            "reserved": "Limehifadhiwa",
+            "sold": "Limeuzwa",
+            "draft": "Rasimu",
+            "archived": "Limehifadhiwa"
+        },
+
+        "specs": {
+            "year": "Mwaka",
+            "mileage": "Kilomita",
+            "fuel": "Mafuta",
+            "gearbox": "Gearbox"
+        },
+
+        "location": {
+            "title": "Mahali",
+            "notSpecified": "Haijaainishwa"
+        },
+
+        "cart": {
+            "loginRequired": "Tafadhali ingia ili kuongeza magari kwenye kikapu chako.",
+            "unavailable": "Gari Halipatikani",
+            "added": "Gari limeongezwa kwenye kikapu chako.",
+            "addFailed": "Imeshindikana kuongeza gari kwenye kikapu.",
+            "adding": "Inaongezwa...",
+            "already": "Lipo Kwenye Kikapu",
+            "add": "Ongeza Kwenye Kikapu",
+            "view": "Angalia Kikapu"
+        },
+
+        "trust": {
+            "title": "Nunua kwa kujiamini.",
+            "description": "Taarifa za gari hutolewa na muuzaji kupitia mfumo wetu."
+        },
+
+        "information": {
+            "label": "Taarifa za Gari",
+            "title": "Vipengele"
+        },
+
+        "details": {
+            "brand": "Chapa",
+            "model": "Modeli",
+            "variant": "Toleo",
+            "year": "Mwaka",
+            "mileage": "Kilomita",
+            "fuelType": "Aina ya Mafuta",
+            "transmission": "Gearbox",
+            "engine": "Injini",
+            "horsepower": "Horsepower",
+            "drivetrain": "Mfumo wa Uendeshaji",
+            "seats": "Viti",
+            "doors": "Milango",
+            "exteriorColor": "Rangi ya Nje",
+            "interiorColor": "Rangi ya Ndani"
+        },
+
+        "description": {
+            "title": "Maelezo",
+            "empty": "Hakuna maelezo yaliyotolewa kuhusu gari hili."
+        },
+
+        "inquiry": {
+            "contactSeller": "Wasiliana na Muuzaji",
+            "title": "Tuma Swali",
+            "description": "Uliza kuhusu gari hili moja kwa moja.",
+            "vehicle": "Gari",
+            "subject": "Mada",
+            "subjectPlaceholder": "mf. Upatikanaji wa gari",
+            "message": "Ujumbe",
+            "messagePlaceholder": "Andika ujumbe wako hapa...",
+            "sending": "Inatuma...",
+            "send": "Tuma Swali",
+            "success": "Swali lako limetumwa kwa mafanikio!",
+
+            "errors": {
+                "subjectRequired": "Tafadhali weka mada.",
+                "messageRequired": "Tafadhali weka ujumbe wako.",
+                "submit": "Imeshindikana kutuma swali. Tafadhali jaribu tena."
+            }
+        },
+
+        "values": {
+            "fuel": {
+                "petrol": "Petrol",
+                "diesel": "Diesel",
+                "hybrid": "Hybrid",
+                "electric": "Umeme"
+            },
+
+            "transmission": {
+                "automatic": "Automatic",
+                "manual": "Manual"
+            }
+        }
+    },
+
+"vehicleCard": {
+    "featured": "MAALUM",
+    "favourite": "Ongeza gari kwenye vipendwa",
+    "available": "Linapatikana",
+    "mileage": "Kilomita",
+    "fuel": "Mafuta",
+    "gearbox": "Gearbox",
+    "locationNotSpecified": "Mahali haijaainishwa",
+    "viewVehicle": "Angalia Gari",
+    "trustedSeller": "Imethibitishwa · Muuzaji Anayeaminika"
+},
+
+
+  "footer": {
+    "description": "Soko lako la kuaminika la kununua na kuuza magari yenye ubora nchini Tanzania.",
+    "quickLinks": "Viungo Muhimu",
+    "customer": "Mteja",
+    "myAccount": "Akaunti Yangu",
+    "myInquiries": "Maulizo Yangu",
+    "myOrders": "Oda Zangu",
+    "sellYourCar": "Uza Gari Lako",
+    "contact": "Wasiliana Nasi",
+    "phone": "Simu",
+    "email": "Barua Pepe",
+    "location": "Mahali",
+    "sellCtaTitle": "Unataka kuuza gari lako?",
+    "sellCtaDescription": "Weka gari lako kwenye soko na ungana na wanunuzi.",
+    "sellCtaButton": "Uza Gari Lako",
+    "rights": "Haki zote zimehifadhiwa.",
+    "developedBy": "Imetengenezwa na"
+  },
+
+    "brandVehicles": {
+        "loading": "Inapakia magari...",
+
+        "backToVehicles": "Rudi kwenye Magari",
+
+        "vehicleCount": "Magari {{count}} yanayopatikana",
+
+        "errors": {
+            "loadFailed": "Imeshindikana kupakia magari ya chapa hii.",
+            "notFound": "Chapa haijapatikana"
+        },
+
+        "empty": {
+            "title": "Hakuna magari yanayopatikana",
+            "description": "Kwa sasa hakuna magari ya {{brand}} yanayopatikana."
+        },
+
+        "browseAll": "Angalia Magari Yote"
+    }
+}
+

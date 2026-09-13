@@ -1,13 +1,25 @@
+
 from django.contrib.auth.models import User
 
 from rest_framework import serializers
 
-from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+from rest_framework_simplejwt.serializers import (
+    TokenObtainPairSerializer
+)
 
 from .models import CustomerProfile
 
 
-class AdminTokenObtainPairSerializer(TokenObtainPairSerializer):
+# ============================================================
+# ADMIN LOGIN TOKEN SERIALIZER
+# ============================================================
+
+class AdminTokenObtainPairSerializer(
+    TokenObtainPairSerializer
+):
+    """
+    Allows only staff users to obtain an admin JWT token.
+    """
 
     def validate(self, attrs):
 
@@ -28,11 +40,17 @@ class AdminTokenObtainPairSerializer(TokenObtainPairSerializer):
 
         return data
 
+
+# ============================================================
+# CUSTOMER PROFILE SERIALIZER
+# ============================================================
+
 class CustomerProfileSerializer(
     serializers.ModelSerializer
 ):
 
     class Meta:
+
         model = CustomerProfile
 
         fields = [
@@ -50,6 +68,11 @@ class CustomerProfileSerializer(
             "updated_at",
         ]
 
+
+# ============================================================
+# CUSTOMER SERIALIZER
+# ============================================================
+
 class CustomerSerializer(
     serializers.ModelSerializer
 ):
@@ -60,6 +83,7 @@ class CustomerSerializer(
     )
 
     class Meta:
+
         model = User
 
         fields = [
@@ -80,6 +104,11 @@ class CustomerSerializer(
             "is_superuser",
         ]
 
+
+# ============================================================
+# CUSTOMER REGISTRATION SERIALIZER
+# ============================================================
+
 class RegisterSerializer(
     serializers.ModelSerializer
 ):
@@ -94,6 +123,7 @@ class RegisterSerializer(
     )
 
     class Meta:
+
         model = User
 
         fields = [
@@ -104,6 +134,11 @@ class RegisterSerializer(
             "password",
             "password_confirm",
         ]
+
+
+    # --------------------------------------------------------
+    # USERNAME VALIDATION
+    # --------------------------------------------------------
 
     def validate_username(self, value):
 
@@ -117,6 +152,11 @@ class RegisterSerializer(
 
         return value
 
+
+    # --------------------------------------------------------
+    # EMAIL VALIDATION
+    # --------------------------------------------------------
+
     def validate_email(self, value):
 
         if User.objects.filter(
@@ -129,16 +169,26 @@ class RegisterSerializer(
 
         return value
 
+
+    # --------------------------------------------------------
+    # PASSWORD VALIDATION
+    # --------------------------------------------------------
+
     def validate(self, data):
 
         if data["password"] != data["password_confirm"]:
 
             raise serializers.ValidationError({
                 "password_confirm":
-                "Passwords do not match."
+                    "Passwords do not match."
             })
 
         return data
+
+
+    # --------------------------------------------------------
+    # CREATE USER
+    # --------------------------------------------------------
 
     def create(self, validated_data):
 
@@ -160,3 +210,181 @@ class RegisterSerializer(
         )
 
         return user
+
+
+# ============================================================
+# ADMIN USER LIST SERIALIZER
+# ============================================================
+
+class AdminUserListSerializer(
+    serializers.ModelSerializer
+):
+
+    profile = CustomerProfileSerializer(
+        source="customer_profile",
+        read_only=True
+    )
+
+    full_name = serializers.SerializerMethodField()
+
+    order_count = serializers.SerializerMethodField()
+
+    inquiry_count = serializers.SerializerMethodField()
+
+
+    class Meta:
+
+        model = User
+
+        fields = [
+            "id",
+            "username",
+            "first_name",
+            "last_name",
+            "full_name",
+            "email",
+            "is_active",
+            "is_staff",
+            "is_superuser",
+            "date_joined",
+            "last_login",
+            "profile",
+            "order_count",
+            "inquiry_count",
+        ]
+
+        read_only_fields = [
+            "id",
+            "username",
+            "is_staff",
+            "is_superuser",
+            "date_joined",
+            "last_login",
+            "order_count",
+            "inquiry_count",
+        ]
+
+
+    # --------------------------------------------------------
+    # FULL NAME
+    # --------------------------------------------------------
+
+    def get_full_name(self, obj):
+
+        full_name = (
+            f"{obj.first_name} "
+            f"{obj.last_name}"
+        ).strip()
+
+        return (
+            full_name
+            if full_name
+            else obj.username
+        )
+
+
+    # --------------------------------------------------------
+    # ORDER COUNT
+    # --------------------------------------------------------
+
+    def get_order_count(self, obj):
+
+        return obj.orders.count()
+
+
+    # --------------------------------------------------------
+    # INQUIRY COUNT
+    # --------------------------------------------------------
+
+    def get_inquiry_count(self, obj):
+
+        return obj.inquiries.count()
+
+
+# ============================================================
+# ADMIN USER DETAIL SERIALIZER
+# ============================================================
+
+class AdminUserDetailSerializer(
+    serializers.ModelSerializer
+):
+
+    profile = CustomerProfileSerializer(
+        source="customer_profile",
+        read_only=True
+    )
+
+    full_name = serializers.SerializerMethodField()
+
+    order_count = serializers.SerializerMethodField()
+
+    inquiry_count = serializers.SerializerMethodField()
+
+
+    class Meta:
+
+        model = User
+
+        fields = [
+            "id",
+            "username",
+            "first_name",
+            "last_name",
+            "full_name",
+            "email",
+            "is_active",
+            "is_staff",
+            "is_superuser",
+            "date_joined",
+            "last_login",
+            "profile",
+            "order_count",
+            "inquiry_count",
+        ]
+
+        read_only_fields = [
+            "id",
+            "username",
+            "is_staff",
+            "is_superuser",
+            "date_joined",
+            "last_login",
+            "order_count",
+            "inquiry_count",
+        ]
+
+
+    # --------------------------------------------------------
+    # FULL NAME
+    # --------------------------------------------------------
+
+    def get_full_name(self, obj):
+
+        full_name = (
+            f"{obj.first_name} "
+            f"{obj.last_name}"
+        ).strip()
+
+        return (
+            full_name
+            if full_name
+            else obj.username
+        )
+
+
+    # --------------------------------------------------------
+    # ORDER COUNT
+    # --------------------------------------------------------
+
+    def get_order_count(self, obj):
+
+        return obj.orders.count()
+
+
+    # --------------------------------------------------------
+    # INQUIRY COUNT
+    # --------------------------------------------------------
+
+    def get_inquiry_count(self, obj):
+
+        return obj.inquiries.count()

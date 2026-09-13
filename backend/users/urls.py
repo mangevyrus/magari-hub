@@ -1,3 +1,4 @@
+
 from django.urls import path
 
 from .views import (
@@ -6,10 +7,19 @@ from .views import (
     ProfileView,
     AccountView,
     AdminTokenView,
+
+    AdminCustomerListView,
+    AdminCustomerDetailView,
+    AdminCustomerStatusView,
+    AdminCustomerDeleteView,
 )
 
 
 urlpatterns = [
+
+    # ========================================================
+    # CUSTOMER AUTHENTICATION
+    # ========================================================
 
     path(
         "register/",
@@ -35,9 +45,42 @@ urlpatterns = [
         name="customer-account"
     ),
 
+    # ========================================================
+    # ADMIN AUTHENTICATION
+    # ========================================================
+
     path(
         "admin-token/",
         AdminTokenView.as_view(),
         name="admin-token"
     ),
+
+    # ========================================================
+    # ADMIN CUSTOMER MANAGEMENT
+    # ========================================================
+
+    path(
+        "admin/customers/",
+        AdminCustomerListView.as_view(),
+        name="admin-customers"
+    ),
+
+    path(
+        "admin/customers/<int:user_id>/",
+        AdminCustomerDetailView.as_view(),
+        name="admin-customer-detail"
+    ),
+
+    path(
+        "admin/customers/<int:user_id>/status/",
+        AdminCustomerStatusView.as_view(),
+        name="admin-customer-status"
+    ),
+
+    path(
+        "admin/customers/<int:user_id>/delete/",
+        AdminCustomerDeleteView.as_view(),
+        name="admin-customer-delete"
+    ),
 ]
+

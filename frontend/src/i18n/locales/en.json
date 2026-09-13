@@ -1,0 +1,997 @@
+
+{
+    "nav": {
+        "home": "Home",
+        "buy": "Buy",
+        "sell": "Sell",
+        "vehicles": "Vehicles",
+        "viewCart": "View Cart",
+        "viewOrders": "View Orders",
+        "login": "Login",
+        "register": "Register",
+        "logout": "Logout",
+        "loggingOut": "Logging out...",
+        "account": "Account",
+        "language": "Language"
+    },
+
+    "language": {
+        "swahili": "Kiswahili",
+        "english": "English"
+    },
+
+    "vehicles": {
+        "hero": {
+            "badge": "Premium Vehicle Marketplace",
+            "title": "Find your",
+            "titleHighlight": "perfect vehicle.",
+            "description": "Explore quality vehicles from trusted sellers. Search, compare and discover your next vehicle with confidence.",
+            "searchPlaceholder": "Search Toyota, BMW, Land Cruiser..."
+        },
+
+        "filters": {
+            "button": "Filters",
+            "brand": "Brand",
+            "category": "Category",
+            "fuelType": "Fuel Type",
+            "transmission": "Transmission",
+            "condition": "Condition",
+            "all": "All",
+            "allBrands": "All Brands",
+            "allCategories": "All Categories",
+            "allFuels": "All Fuels",
+            "minPrice": "Min Price",
+            "maxPrice": "Max Price",
+            "minPricePlaceholder": "Min",
+            "maxPricePlaceholder": "Max",
+            "apply": "Apply Filters",
+            "reset": "Reset All",
+
+            "fuelOptions": {
+                "petrol": "Petrol",
+                "diesel": "Diesel",
+                "hybrid": "Hybrid",
+                "electric": "Electric"
+            },
+
+            "transmissionOptions": {
+                "automatic": "Automatic",
+                "manual": "Manual"
+            },
+
+            "conditionOptions": {
+                "new": "New",
+                "used": "Used"
+            },
+
+            "sortOptions": {
+                "newest": "Newest",
+                "priceLow": "Price: Low to High",
+                "priceHigh": "Price: High to Low",
+                "oldest": "Oldest"
+            }
+        },
+
+        "results": {
+            "vehicleCount": "vehicles"
+        },
+
+        "activeFilters": {
+            "brand": "Brand",
+            "category": "Category",
+            "fuel": "Fuel",
+            "condition": "Condition",
+            "min": "Min",
+            "max": "Max",
+            "transmission": "Gearbox"
+        },
+
+        "empty": {
+            "title": "No vehicles found",
+            "description": "We couldn't find vehicles matching your current search and filters. Try changing your criteria.",
+            "reset": "Reset Search"
+        }
+    },
+
+
+"register": {
+    "title": "Create Your Account",
+    "subtitle": "Join Bingwa Magari Used and start exploring quality vehicles.",
+    "firstName": "First Name",
+    "firstNamePlaceholder": "John",
+    "lastName": "Last Name",
+    "lastNamePlaceholder": "Mange",
+    "username": "Username",
+    "usernamePlaceholder": "smilingvyrus",
+    "email": "Email Address",
+    "emailPlaceholder": "johnmange@example.com",
+    "password": "Password",
+    "passwordPlaceholder": "Minimum 8 characters",
+    "confirmPassword": "Confirm Password",
+    "confirmPasswordPlaceholder": "Repeat your password",
+    "creatingAccount": "Creating account...",
+    "createAccount": "Create Account",
+    "haveAccount": "Already have an account?",
+    "login": "Login",
+    "success": "Your account has been created successfully.",
+    "errors": {
+        "passwordMismatch": "Passwords do not match.",
+        "passwordLength": "Password must contain at least 8 characters.",
+        "failed": "Registration failed."
+    }
+},
+"inquiries": {
+    "backToAccount": "Back to Account",
+    "eyebrow": "Customer Area",
+    "title": "My Inquiries",
+    "description": "Track your vehicle inquiries and responses.",
+    "errors": {
+        "load": "Failed to load inquiries."
+    },
+    "empty": {
+        "title": "No inquiries yet",
+        "description": "You haven't sent any vehicle inquiries yet. Browse our vehicles and contact a seller when you find something you like.",
+        "browseVehicles": "Browse Vehicles"
+    },
+    "vehicleInquiry": "Vehicle Inquiry",
+    "yourMessage": "Your Message",
+    "adminResponse": "Admin Response",
+    "status": {
+        "responded": "Responded",
+        "closed": "Closed",
+        "pending": "Pending"
+    }
+}, 
+"login": {
+    "title": "Welcome Back",
+    "subtitle": "Sign in to your Bingwa Magari Used account",
+    "username": "Username",
+    "usernamePlaceholder": "Enter your username",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "forgotPassword": "Forgot password?",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "signingIn": "Signing in...",
+    "signIn": "Sign In",
+    "noAccount": "Don't have an account?",
+    "createOne": "Create one",
+    "adminQuestion": "Are you an administrator?",
+    "adminLogin": "Bingwa wa Magari Used",
+    "errors": {
+        "required": "Please enter your username and password.",
+        "invalidCredentials": "Invalid username or password.",
+        "failed": "Login failed. Please try again."
+    }
+},
+
+"sellCar": {
+    "backToVehicles": "Back to Vehicles",
+    "hero": {
+        "badge": "Sell Your Vehicle",
+        "title": "Turn Your Car Into",
+        "highlight": "A Great Deal",
+        "description": "List your vehicle on Bingwa Magari Used and connect with people looking for their next car.",
+        "startButton": "Start Selling",
+        "browseButton": "Browse Vehicles"
+    },
+    "process": {
+        "eyebrow": "How It Works",
+        "title": "Selling your car is simple",
+        "description": "Give us the details of your vehicle and we will help you get it in front of potential buyers.",
+        "steps": {
+            "details": {
+                "title": "Tell us about your car",
+                "description": "Provide accurate information about your vehicle, your asking price and your location."
+            },
+            "review": {
+                "title": "We review your listing",
+                "description": "Our team checks the submitted information before the vehicle is published."
+            },
+            "sell": {
+                "title": "Connect with buyers",
+                "description": "Once your vehicle is listed, interested buyers can discover it and contact you."
+            }
+        }
+    },
+    "form": {
+        "eyebrow": "Vehicle Listing",
+        "title": "Tell us about your car",
+        "description": "Provide the information below so we can prepare your vehicle listing.",
+        "seller": {
+            "title": "Seller Information",
+            "description": "How can buyers contact you?"
+        },
+        "vehicle": {
+            "title": "Vehicle Information",
+            "description": "Tell us about the vehicle you want to sell."
+        },
+        "fields": {
+            "fullName": "Full Name",
+            "phone": "Phone Number",
+            "email": "Email Address",
+            "location": "Location",
+            "brand": "Vehicle Brand",
+            "model": "Model",
+            "year": "Year",
+            "condition": "Condition",
+            "mileage": "Mileage (km)",
+            "price": "Asking Price (TZS)",
+            "description": "Vehicle Description"
+        },
+        "placeholders": {
+            "fullName": "Enter your full name",
+            "phone": "+255 7XX XXX XXX",
+            "email": "you@example.com",
+            "location": "e.g. Dar es Salaam, Kinondoni",
+            "brand": "e.g. Toyota",
+            "model": "e.g. Harrier",
+            "year": "e.g. 2020",
+            "mileage": "e.g. 85000",
+            "price": "e.g. 45000000",
+            "description": "Describe the condition, features, history and anything buyers should know..."
+        },
+        "conditions": {
+            "used": "Used",
+            "new": "New",
+            "certified": "Certified"
+        },
+        "images": {
+            "title": "Vehicle Photos",
+            "description": "Good photos help buyers understand your vehicle.",
+            "choose": "Choose vehicle photos",
+            "hint": "You can select multiple images.",
+            "remove": "Remove image"
+        },
+        "privacyNote": "Please make sure the information you provide is accurate. Your contact information may be used to communicate with you about your listing.",
+        "submit": "Submit Vehicle"
+    },
+    "success": {
+        "title": "Vehicle information submitted",
+        "description": "Thank you. Your vehicle information has been received. Our team will review the details and contact you about the next steps.",
+        "submitAnother": "Submit Another Vehicle"
+    },
+    "sidebar": {
+        "title": "Reach more buyers",
+        "description": "Bingwa Magari Used helps vehicle sellers showcase their cars to people actively looking for vehicles.",
+        "points": {
+            "reachBuyers": "Reach potential vehicle buyers",
+            "professionalListing": "Get a professional vehicle listing",
+            "support": "Receive support during the selling process"
+        },
+        "locationTitle": "Your Location",
+        "locationDescription": "Tell buyers where the vehicle is located.",
+        "contactNote": "We will contact you about your listing."
+    }
+},
+
+"checkout": {
+    "loading": "Loading checkout...",
+
+    "backToCart": "Back to Cart",
+
+    "header": {
+        "eyebrow": "Bingwa Magari Used Checkout",
+        "title": "Complete Your Order",
+        "description": "Provide your contact information and choose how you would like to receive your vehicle."
+    },
+
+    "customer": {
+        "title": "Customer Information",
+        "description": "Enter the information we should use to contact you."
+    },
+
+    "fields": {
+        "fullName": {
+            "label": "Full Name",
+            "placeholder": "Enter your full name"
+        },
+
+        "phone": {
+            "label": "Phone Number",
+            "placeholder": "+255 7XX XXX XXX"
+        },
+
+        "email": {
+            "label": "Email Address",
+            "placeholder": "you@example.com"
+        },
+
+        "location": {
+            "label": "Location",
+            "deliveryLabel": "Delivery Location",
+            "placeholder": "e.g. Dar es Salaam, Kinondoni"
+        },
+
+        "notes": {
+            "label": "Additional Notes",
+            "optional": "(optional)",
+            "placeholder": "Anything else you would like us to know?"
+        }
+    },
+
+    "fulfillment": {
+        "title": "How would you like to receive the vehicle?",
+
+        "pickup": {
+            "title": "Pickup",
+            "description": "Pick up the vehicle from the agreed location."
+        },
+
+        "delivery": {
+            "title": "Delivery",
+            "description": "Have the vehicle delivered to your location."
+        }
+    },
+
+    "actions": {
+        "processing": "Processing Order...",
+        "confirm": "Confirm Order"
+    },
+
+    "summary": {
+        "eyebrow": "Your Cart",
+        "title": "Order Summary",
+        "vehicles": "Vehicles",
+        "total": "Total",
+        "important": "Important:",
+        "importantDescription": "Your order does not represent final payment. Vehicle availability will be verified before confirmation.",
+        "editCart": "Edit Cart"
+    },
+
+    "success": {
+        "eyebrow": "Order Submitted",
+        "title": "Thank you for your order!",
+        "description": "Your vehicle order has been submitted successfully. Our team will contact you shortly to confirm the order and arrange the next steps.",
+        "orderNumber": "Order Number",
+        "viewOrders": "View My Orders",
+        "browseVehicles": "Browse More Vehicles"
+    },
+
+    "empty": {
+        "title": "Your cart is empty",
+        "description": "Add a vehicle before proceeding to checkout.",
+        "browseVehicles": "Browse Vehicles"
+    },
+
+    "validation": {
+        "emptyCart": "Your cart is empty.",
+        "fullName": "Please enter your full name.",
+        "phone": "Please enter your phone number.",
+        "email": "Please enter your email address.",
+        "deliveryLocation": "Please enter your delivery location."
+    },
+
+    "errors": {
+        "loadCart": "Failed to load your cart.",
+        "checkoutFailed": "Checkout failed. Please try again.",
+        "vehicleUnavailable": "{{vehicle}} is no longer available."
+    },
+
+    "vehicleFallback": "One of the vehicles",
+
+    "orderStatus": {
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "processing": "Processing",
+        "completed": "Completed",
+        "cancelled": "Cancelled"
+    }
+},
+
+"changePassword": {
+    "backToSettings": "Back to Account Settings",
+
+    "header": {
+        "eyebrow": "Security",
+        "title": "Change Password",
+        "description": "Update your password to keep your account secure."
+    },
+
+    "messages": {
+        "success": "Password changed successfully. Please log in again.",
+        "errorTitle": "Something went wrong",
+        "error": "Failed to change your password."
+    },
+
+    "validation": {
+        "allFields": "Please fill in all password fields.",
+        "minLength": "New password must contain at least 8 characters.",
+        "noMatch": "New passwords do not match.",
+        "different": "Your new password must be different from your current password."
+    },
+
+    "security": {
+        "title": "Password Security",
+        "description": "Use a strong password that you don't use elsewhere."
+    },
+
+    "fields": {
+        "current": {
+            "label": "Current Password"
+        },
+        "new": {
+            "label": "New Password"
+        },
+        "confirm": {
+            "label": "Confirm New Password"
+        }
+    },
+
+    "requirements": {
+        "title": "Password Requirements",
+        "minLength": "At least 8 characters",
+        "different": "Different from your current password",
+        "avoidGuessing": "Avoid using easily guessed information"
+    },
+
+    "actions": {
+        "cancel": "Cancel",
+        "changing": "Changing...",
+        "change": "Change Password",
+        "showPassword": "Show password",
+        "hidePassword": "Hide password"
+    }
+},
+
+"accountSettings": {
+    "loading": "Loading your settings...",
+
+    "backToAccount": "Back to My Account",
+
+    "header": {
+        "eyebrow": "Account Settings",
+        "title": "Personal Information",
+        "description": "Update your personal information and contact details."
+    },
+
+    "messages": {
+        "success": "Your personal information has been updated successfully.",
+        "errorTitle": "Something went wrong",
+        "error": "Failed to update your information."
+    },
+
+    "account": {
+        "title": "Account Information",
+        "description": "Your basic account details"
+    },
+
+    "contact": {
+        "title": "Contact Information",
+        "description": "Help us contact you about your vehicle inquiries and orders"
+    },
+
+    "security": {
+        "title": "Password & Security",
+        "description": "Keep your account secure",
+        "changePassword": "Change Password"
+    },
+
+    "fields": {
+        "firstName": {
+            "label": "First Name",
+            "placeholder": "Enter your first name"
+        },
+
+        "lastName": {
+            "label": "Last Name",
+            "placeholder": "Enter your last name"
+        },
+
+        "username": {
+            "label": "Username",
+            "placeholder": "Enter your username"
+        },
+
+        "email": {
+            "label": "Email",
+            "placeholder": "your@email.com"
+        },
+
+        "phone": {
+            "label": "Phone Number",
+            "placeholder": "+255..."
+        },
+
+        "location": {
+            "label": "Location",
+            "placeholder": "Dar es Salaam, Tanzania"
+        }
+    },
+
+    "actions": {
+        "saving": "Saving...",
+        "save": "Save Changes"
+    }
+},
+
+
+"account": {
+    "loading": "Loading your account...",
+    "badge": "My Account",
+    "welcome": "Welcome Back",
+    "description": "Manage your Bingwa Magari Used account and personal information.",
+    "quickActions": {
+        "title": "Quick Actions",
+        "browse": {
+            "title": "Browse Vehicles",
+            "description": "Find your next vehicle"
+        },
+        "orders": {
+            "title": "My Orders",
+            "description": "Track your purchases"
+        },
+        "inquiries": {
+            "title": "My Inquiries",
+            "description": "View your vehicle inquiries and responses"
+        },
+        "cart": {
+            "title": "My Cart",
+            "description": "View your saved vehicles"
+        },
+        "settings": {
+            "title": "Account Settings",
+            "description": "Update your information"
+        },
+        "favourites": {
+            "title": "Favourites",
+            "description": "Your saved vehicles"
+        }
+    },
+    "logout": {
+        "title": "Logout",
+        "description": "Sign out of your account"
+    },
+    "marketplace": {
+        "title": "Find your next car.",
+        "description": "Explore our marketplace and discover vehicles that match what you are looking for.",
+        "button": "Explore Vehicles"
+    },
+    "personal": {
+        "title": "Personal Info",
+        "subtitle": "Account details",
+        "edit": "Edit",
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "location": "Location",
+        "notProvided": "Not provided",
+        "memberSince": "Member since"
+    }
+},
+
+
+ 
+"cart": {
+    "loading": "Loading your cart...",
+    "badge": "Shopping Cart",
+    "title": "Your Cart",
+    "description": "Review the vehicle you want before continuing to checkout.",
+    "vehicle": "Vehicle",
+    "selectedVehicles": "Selected Vehicles",
+    "vehicleCount": "{{count}} vehicle in your cart",
+    "available": "Available",
+    "unavailable": "Currently unavailable",
+    "removing": "Removing...",
+    "remove": "Remove",
+    "continueShopping": "Continue Shopping",
+    "proceedCheckout": "Proceed to Checkout",
+    "errors": {
+        "loadFailed": "Failed to load your cart.",
+        "removeFailed": "Failed to remove vehicle from cart."
+    },
+    "empty": {
+        "title": "Your Cart Is Empty",
+        "description": "You haven't added any vehicles to your cart yet.",
+        "browse": "Browse Vehicles"
+    },
+    "summary": {
+        "title": "Order Summary",
+        "vehicles": "Vehicles",
+        "subtotal": "Subtotal",
+        "total": "Total"
+    },
+    "verificationNotice": "Vehicle availability and pricing will be verified when your order is submitted."
+},
+
+
+    "common": {
+        "loading": "Loading...",
+        "back": "Back",
+        "save": "Save",
+        "cancel": "Cancel",
+        "close": "Close",
+        "search": "Search",
+        "clear": "Clear",
+        "clearAll": "Clear All",
+        "remove": "Remove"
+    },
+
+    "home": {
+        "callUs": "Call us at +255 711 398 600",
+
+        "heroTitle": "Fast And Easy Way to",
+        "heroHighlight": "Buy Or Sell Cars",
+        "searchPlaceholder": "Search your desired car",
+        "searchButton": "SEARCH",
+        "activeUsers": "Active users",
+
+        "featuredListings": "Featured Listings",
+        "handpicked": "Handpicked",
+        "vehicles": "Vehicles",
+        "featuredDescription": "Discover our selection of premium certified used cars.",
+        "viewAll": "View All",
+
+        "noVehicles": "No vehicles available",
+        "newListingsSoon": "New listings will appear here soon.",
+
+        "popularBrands": "Popular Brands",
+        "browseBy": "Browse by",
+        "brand": "Brand",
+        "brandDescription": "Explore vehicles from your favourite car brands.",
+        "viewAllVehicles": "View All Vehicles",
+        "noBrands": "No vehicle brands available yet.",
+
+        "available": "Available",
+        "brandVehicles": "Vehicles",
+        "clear": "Clear",
+
+        "brandNotAvailableTitle": "Brand Not Available",
+        "brandNotAvailable": "{{brand}} vehicles are not available right now.",
+        "brandLoadError": "Unable to load {{brand}} vehicles. Please try again.",
+
+        "browseAllVehicles": "Browse All Vehicles",
+        "noVehiclesAvailable": "No Vehicles Available",
+        "noBrandVehicles": "There are currently no {{brand}} vehicles available.",
+
+        "whyChooseUs": "Why Choose Us",
+        "trusted": "Your Trusted",
+        "carMarketplace": "Car Marketplace",
+        "trustedDescription": "We make car buying simple, transparent, and secure.",
+
+        "trust": {
+            "verifiedSellers": "Verified Sellers",
+            "authentic": "100% authentic",
+            "qualityChecked": "Quality Checked",
+            "inspected": "Every vehicle inspected",
+            "expertSupport": "Expert Support",
+            "support24": "24/7 assistance"
+        },
+
+        "features": {
+            "verified": {
+                "title": "100% Verified",
+                "description": "Every vehicle is thoroughly inspected and certified before listing."
+            },
+
+            "prices": {
+                "title": "Best Prices",
+                "description": "Competitive pricing with transparent fee structure."
+            },
+
+            "community": {
+                "title": "Trusted Community",
+                "description": "Join thousands of satisfied customers across Africa."
+            },
+
+            "process": {
+                "title": "Fast Process",
+                "description": "Quick evaluations and seamless transaction process."
+            },
+
+            "guarantee": {
+                "title": "Quality Guarantee",
+                "description": "6-12 months warranty on all certified vehicles."
+            },
+
+            "support": {
+                "title": "Expert Support",
+                "description": "Dedicated support team available 24/7."
+            }
+        },
+
+        "stats": {
+            "customers": "Happy Customers",
+            "vehicles": "Vehicles Available",
+            "rating": "Average Rating",
+            "quality": "Certified Quality"
+        },
+
+        "testimonials": "Testimonials",
+        "whatCustomers": "What Our Customers",
+        "say": "Say",
+
+        "testimonialsData": {
+            "john": {
+                "quote": "The best platform to buy a used car in Africa. The process was smooth and the car was exactly as described.",
+                "role": "Kenya"
+            },
+
+            "sarah": {
+                "quote": "I sold my car within 3 days of listing. The team handled everything professionally.",
+                "role": "Tanzania"
+            },
+
+            "michael": {
+                "quote": "The certification process gave me confidence. I love my new car!",
+                "role": "Uganda"
+            }
+        },
+
+        "cta": {
+            "ready": "Ready to Find Your Dream Car?",
+            "start": "Start Your",
+            "journey": "Journey Today",
+            "description": "Browse our collection and find the perfect vehicle for you.",
+            "explore": "Explore Now"
+        },
+
+        "footer": {
+            "tagline": "Your trusted car marketplace.",
+            "privacy": "Privacy",
+            "terms": "Terms",
+            "contact": "Contact",
+            "copyright": "© 2026 BINGWA MAGARI USED"
+        }
+    },
+
+"orders": {
+    "loading": "Loading your orders...",
+    "eyebrow": "Customer Account",
+    "title": "My Orders",
+    "description": "View your vehicle orders, check their status, and see your order details.",
+    "errors": {
+        "load": "Failed to load your orders."
+    },
+    "empty": {
+        "title": "No orders yet",
+        "description": "You haven't placed any vehicle orders yet. Browse our available vehicles and place your first order.",
+        "browseVehicles": "Browse Vehicles"
+    },
+    "orderNumber": "Order Number",
+    "vehicle": "Vehicle",
+    "vehicleFallback": "Vehicle",
+    "orderDate": "Order Date",
+    "fulfillment": "Fulfillment",
+    "fulfillmentOptions": {
+        "pickup": "Pickup",
+        "delivery": "Delivery"
+    },
+    "location": "Location",
+    "locationNotSpecified": "Not specified",
+    "nextSteps": "We will contact you regarding the next steps.",
+    "viewOrder": "View Order",
+    "status": {
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "processing": "Processing",
+        "completed": "Completed",
+        "cancelled": "Cancelled",
+        "unknown": "Unknown"
+    }
+},
+
+"orderDetails": {
+    "loading": "Loading order...",
+    "errors": {
+        "load": "Failed to load order."
+    },
+    "notFound": {
+        "title": "Order not found",
+        "description": "We could not find this order."
+    },
+    "backToOrders": "Back to My Orders",
+    "eyebrow": "Order Details",
+    "placedOn": "Placed on",
+    "vehicle": "Vehicle",
+    "vehicleFallback": "Vehicle",
+    "vehiclePrice": "Vehicle Price",
+    "customerInformation": "Customer Information",
+    "fields": {
+        "fullName": "Full Name",
+        "phone": "Phone",
+        "email": "Email",
+        "location": "Location"
+    },
+    "locationNotSpecified": "Not specified",
+    "additionalNotes": "Additional Notes",
+    "orderSummary": "Order Summary",
+    "summary": {
+        "orderNumber": "Order Number",
+        "vehicle": "Vehicle",
+        "fulfillment": "Fulfillment",
+        "created": "Created",
+        "lastUpdated": "Last Updated"
+    },
+    "total": "Total",
+    "fulfillment": "Fulfillment",
+    "fulfillmentOptions": {
+        "pickup": "Pickup",
+        "delivery": "Delivery"
+    },
+    "fulfillmentDescriptions": {
+        "pickup": "You will pick up the vehicle from the agreed location.",
+        "delivery": "Your vehicle will be delivered to the location provided during checkout."
+    },
+    "currentStatus": "Current Status",
+    "statusDescription": "Our team will contact you if additional information or action is required.",
+    "status": {
+        "pending": "Pending",
+        "confirmed": "Confirmed",
+        "processing": "Processing",
+        "completed": "Completed",
+        "cancelled": "Cancelled",
+        "unknown": "Unknown"
+    }
+},
+    "vehicleDetails": {
+        "breadcrumb": "Back to vehicles",
+
+        "notFound": {
+            "title": "Vehicle not found",
+            "back": "Back to Vehicles"
+        },
+
+        "gallery": {
+            "previous": "Previous image",
+            "next": "Next image",
+            "selectImage": "Select image {{number}}"
+        },
+
+        "actions": {
+            "favourite": "Add to favourites",
+            "share": "Share vehicle",
+            "inquiry": "Inquiry / Contact Seller",
+            "whatsapp": "WhatsApp"
+        },
+
+        "price": "Asking Price",
+
+        "status": {
+            "available": "Available",
+            "reserved": "Reserved",
+            "sold": "Sold",
+            "draft": "Draft",
+            "archived": "Archived"
+        },
+
+        "specs": {
+            "year": "Year",
+            "mileage": "Mileage",
+            "fuel": "Fuel",
+            "gearbox": "Gearbox"
+        },
+
+        "location": {
+            "title": "Location",
+            "notSpecified": "Not specified"
+        },
+
+        "cart": {
+            "loginRequired": "Please login to add vehicles to your cart.",
+            "unavailable": "Vehicle Unavailable",
+            "added": "Vehicle added to your cart.",
+            "addFailed": "Failed to add vehicle to cart.",
+            "adding": "Adding...",
+            "already": "Already in Cart",
+            "add": "Add to Cart",
+            "view": "View Cart"
+        },
+
+        "trust": {
+            "title": "Buy with confidence.",
+            "description": "Vehicle information is provided by the seller through our platform."
+        },
+
+        "information": {
+            "label": "Vehicle Information",
+            "title": "Specifications"
+        },
+
+        "details": {
+            "brand": "Brand",
+            "model": "Model",
+            "variant": "Variant",
+            "year": "Year",
+            "mileage": "Mileage",
+            "fuelType": "Fuel Type",
+            "transmission": "Transmission",
+            "engine": "Engine",
+            "horsepower": "Horsepower",
+            "drivetrain": "Drivetrain",
+            "seats": "Seats",
+            "doors": "Doors",
+            "exteriorColor": "Exterior Color",
+            "interiorColor": "Interior Color"
+        },
+
+        "description": {
+            "title": "Description",
+            "empty": "No description has been provided for this vehicle."
+        },
+
+        "inquiry": {
+            "contactSeller": "Contact Seller",
+            "title": "Send an Inquiry",
+            "description": "Ask about this vehicle directly.",
+            "vehicle": "Vehicle",
+            "subject": "Subject",
+            "subjectPlaceholder": "e.g. Vehicle availability",
+            "message": "Message",
+            "messagePlaceholder": "Write your message here...",
+            "sending": "Sending...",
+            "send": "Send Inquiry",
+            "success": "Your inquiry has been sent successfully!",
+
+            "errors": {
+                "subjectRequired": "Please enter a subject.",
+                "messageRequired": "Please enter your message.",
+                "submit": "Failed to send inquiry. Please try again."
+            }
+        },
+
+        "values": {
+            "fuel": {
+                "petrol": "Petrol",
+                "diesel": "Diesel",
+                "hybrid": "Hybrid",
+                "electric": "Electric"
+            },
+
+            "transmission": {
+                "automatic": "Automatic",
+                "manual": "Manual"
+            }
+        }
+    },
+"vehicleCard": {
+    "featured": "FEATURED",
+    "favourite": "Add vehicle to favourites",
+    "available": "Available",
+    "mileage": "Mileage",
+    "fuel": "Fuel",
+    "gearbox": "Gearbox",
+    "locationNotSpecified": "Location not specified",
+    "viewVehicle": "View Vehicle",
+    "trustedSeller": "Certified · Trusted Seller"
+},
+  "footer": {
+    "description": "Your trusted marketplace for buying and selling quality vehicles in Tanzania.",
+    "quickLinks": "Quick Links",
+    "customer": "Customer",
+    "myAccount": "My Account",
+    "myInquiries": "My Inquiries",
+    "myOrders": "My Orders",
+    "sellYourCar": "Sell Your Car",
+    "contact": "Contact Us",
+    "phone": "Phone",
+    "email": "Email",
+    "location": "Location",
+    "sellCtaTitle": "Want to sell your car?",
+    "sellCtaDescription": "List your vehicle and connect with potential buyers.",
+    "sellCtaButton": "Sell Your Car",
+    "rights": "All rights reserved.",
+    "developedBy": "Developed by"
+  },
+
+    "brandVehicles": {
+        "loading": "Loading vehicles...",
+
+        "backToVehicles": "Back to Vehicles",
+
+        "vehicleCount": "{{count}} vehicles available",
+
+        "errors": {
+            "loadFailed": "Failed to load vehicles for this brand.",
+            "notFound": "Brand not found"
+        },
+
+        "empty": {
+            "title": "No vehicles available",
+            "description": "There are currently no vehicles from {{brand}} available."
+        },
+
+        "browseAll": "Browse All Vehicles"
+    }
+}
+

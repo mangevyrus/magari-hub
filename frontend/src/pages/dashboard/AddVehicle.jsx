@@ -534,7 +534,7 @@ function AddVehicle() {
 
         return (
 
-            <div className="min-h-screen bg-[#F5F9FC]">
+            <div className="min-h-screen bg-[#FDF8F5]">
 
                 <Navbar />
 
@@ -544,10 +544,10 @@ function AddVehicle() {
 
                         <Loader2
                             size={40}
-                            className="mx-auto animate-spin text-[#2F80C0]"
+                            className="mx-auto animate-spin text-[#8B1A1A]"
                         />
 
-                        <p className="mt-4 font-semibold text-[#12395B]">
+                        <p className="mt-4 font-semibold text-[#2D1B0E]">
                             Loading vehicle form...
                         </p>
 
@@ -570,16 +570,16 @@ function AddVehicle() {
 
 
             {/* =================================================
-                PAGE HEADER
+                PAGE HEADER - REDISH
             ================================================= */}
 
-            <section className="border-b border-blue-100 bg-[#EAF6FF]">
+            <section className="border-b border-[#8B1A1A]/20 bg-[#FDF8F5]">
 
                 <div className="mx-auto max-w-7xl px-5 py-8 md:px-8">
 
                     <Link
                         to="/dashboard"
-                        className="mb-5 inline-flex items-center gap-2 text-sm font-bold text-[#2F80C0] transition hover:text-[#12395B]"
+                        className="mb-5 inline-flex items-center gap-2 text-sm font-bold text-[#8B1A1A] transition hover:text-[#6B1515]"
                     >
 
                         <ArrowLeft size={17} />
@@ -593,15 +593,15 @@ function AddVehicle() {
 
                         <div>
 
-                            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#2F80C0]">
+                            <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8B1A1A]">
                                 Vehicle Management
                             </p>
 
-                            <h1 className="mt-2 text-3xl font-extrabold text-[#12395B] md:text-4xl">
+                            <h1 className="mt-2 text-3xl font-extrabold text-[#2D1B0E] md:text-4xl">
                                 Add New Vehicle
                             </h1>
 
-                            <p className="mt-2 max-w-2xl text-slate-500">
+                            <p className="mt-2 max-w-2xl text-[#6A5A4A]">
                                 Create a professional vehicle listing
                                 with complete specifications and high-quality images.
                             </p>
@@ -609,7 +609,7 @@ function AddVehicle() {
                         </div>
 
 
-                        <div className="hidden h-14 w-14 items-center justify-center rounded-2xl bg-[#12395B] text-white shadow-lg md:flex">
+                        <div className="hidden h-14 w-14 items-center justify-center rounded-2xl bg-[#8B1A1A] text-white shadow-lg shadow-[#8B1A1A]/20 md:flex">
 
                             <Car size={28} />
 
@@ -693,7 +693,7 @@ function AddVehicle() {
                         BASIC INFORMATION
                     ================================================= */}
 
-                    <FormSection
+                    <FormSectionRed
                         icon={<Car size={20} />}
                         title="Basic Information"
                         description="Tell customers what vehicle you are listing."
@@ -701,7 +701,7 @@ function AddVehicle() {
 
                         <div className="grid gap-5 md:grid-cols-2">
 
-                            <SelectField
+                            <SelectFieldRed
                                 label="Brand"
                                 name="brand"
                                 value={form.brand}
@@ -717,7 +717,7 @@ function AddVehicle() {
                             />
 
 
-                            <SelectField
+                            <SelectFieldRed
                                 label="Category"
                                 name="category"
                                 value={form.category}
@@ -733,7 +733,7 @@ function AddVehicle() {
                             />
 
 
-                            <InputField
+                            <InputFieldRed
                                 label="Model"
                                 name="model"
                                 value={form.model}
@@ -743,7 +743,7 @@ function AddVehicle() {
                             />
 
 
-                            <InputField
+                            <InputFieldRed
                                 label="Variant"
                                 name="variant"
                                 value={form.variant}
@@ -752,7 +752,7 @@ function AddVehicle() {
                             />
 
 
-                            <InputField
+                            <InputFieldRed
                                 label="Year"
                                 name="year"
                                 type="number"
@@ -765,14 +765,14 @@ function AddVehicle() {
 
                         </div>
 
-                    </FormSection>
+                    </FormSectionRed>
 
 
                     {/* =================================================
                         PRICING
                     ================================================= */}
 
-                    <FormSection
+                    <FormSectionRed
                         icon={<Gauge size={20} />}
                         title="Pricing & Inventory"
                         description="Set the price, mileage and availability."
@@ -780,7 +780,7 @@ function AddVehicle() {
 
                         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-4">
 
-                            <InputField
+                            <InputFieldRed
                                 label="Price"
                                 name="price"
                                 type="number"
@@ -792,7 +792,7 @@ function AddVehicle() {
                             />
 
 
-                            <InputField
+                            <InputFieldRed
                                 label="Mileage"
                                 name="mileage"
                                 type="number"
@@ -803,7 +803,7 @@ function AddVehicle() {
                             />
 
 
-                            <SelectField
+                            <SelectFieldRed
                                 label="Condition"
                                 name="condition"
                                 value={form.condition}
@@ -825,7 +825,7 @@ function AddVehicle() {
                             />
 
 
-                            <SelectField
+                            <SelectFieldRed
                                 label="Status"
                                 name="status"
                                 value={form.status}
@@ -857,23 +857,23 @@ function AddVehicle() {
                         </div>
 
 
-                        <label className="mt-5 flex cursor-pointer items-center gap-3 rounded-xl border border-blue-100 bg-[#F5F9FC] p-4">
+                        <label className="mt-5 flex cursor-pointer items-center gap-3 rounded-xl border border-[#8B1A1A]/20 bg-[#FDF8F5] p-4 hover:bg-[#FDF8F5]/80 transition">
 
                             <input
                                 type="checkbox"
                                 name="featured"
                                 checked={form.featured}
                                 onChange={handleChange}
-                                className="h-5 w-5 rounded border-blue-200 text-[#2F80C0] focus:ring-[#2F80C0]"
+                                className="h-5 w-5 rounded border-[#8B1A1A]/30 text-[#8B1A1A] focus:ring-[#8B1A1A]/30"
                             />
 
                             <div>
 
-                                <p className="font-bold text-[#12395B]">
+                                <p className="font-bold text-[#2D1B0E]">
                                     Feature this vehicle
                                 </p>
 
-                                <p className="text-sm text-slate-400">
+                                <p className="text-sm text-[#6A5A4A]">
                                     Featured vehicles appear prominently on the website.
                                 </p>
 
@@ -881,19 +881,19 @@ function AddVehicle() {
 
                             <Star
                                 size={20}
-                                className="ml-auto text-[#2F80C0]"
+                                className="ml-auto text-[#8B1A1A]"
                             />
 
                         </label>
 
-                    </FormSection>
+                    </FormSectionRed>
 
 
                     {/* =================================================
                         TECHNICAL SPECIFICATIONS
                     ================================================= */}
 
-                    <FormSection
+                    <FormSectionRed
                         icon={<Settings2 size={20} />}
                         title="Technical Specifications"
                         description="Provide detailed mechanical information."
@@ -901,7 +901,7 @@ function AddVehicle() {
 
                         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
 
-                            <SelectField
+                            <SelectFieldRed
                                 label="Fuel Type"
                                 name="fuel_type"
                                 value={form.fuel_type}
@@ -927,7 +927,7 @@ function AddVehicle() {
                             />
 
 
-                            <SelectField
+                            <SelectFieldRed
                                 label="Transmission"
                                 name="transmission"
                                 value={form.transmission}
@@ -949,7 +949,7 @@ function AddVehicle() {
                             />
 
 
-                            <InputField
+                            <InputFieldRed
                                 label="Engine Size"
                                 name="engine_size"
                                 value={form.engine_size}
@@ -958,7 +958,7 @@ function AddVehicle() {
                             />
 
 
-                            <InputField
+                            <InputFieldRed
                                 label="Horsepower"
                                 name="horsepower"
                                 type="number"
@@ -968,7 +968,7 @@ function AddVehicle() {
                             />
 
 
-                            <InputField
+                            <InputFieldRed
                                 label="Drivetrain"
                                 name="drivetrain"
                                 value={form.drivetrain}
@@ -977,7 +977,7 @@ function AddVehicle() {
                             />
 
 
-                            <InputField
+                            <InputFieldRed
                                 label="Seats"
                                 name="seats"
                                 type="number"
@@ -987,7 +987,7 @@ function AddVehicle() {
                             />
 
 
-                            <InputField
+                            <InputFieldRed
                                 label="Doors"
                                 name="doors"
                                 type="number"
@@ -998,14 +998,14 @@ function AddVehicle() {
 
                         </div>
 
-                    </FormSection>
+                    </FormSectionRed>
 
 
                     {/* =================================================
                         APPEARANCE & LOCATION
                     ================================================= */}
 
-                    <FormSection
+                    <FormSectionRed
                         icon={<Palette size={20} />}
                         title="Appearance & Location"
                         description="Add colors and the vehicle's location."
@@ -1013,7 +1013,7 @@ function AddVehicle() {
 
                         <div className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
 
-                            <InputField
+                            <InputFieldRed
                                 label="Exterior Color"
                                 name="exterior_color"
                                 value={form.exterior_color}
@@ -1022,7 +1022,7 @@ function AddVehicle() {
                             />
 
 
-                            <InputField
+                            <InputFieldRed
                                 label="Interior Color"
                                 name="interior_color"
                                 value={form.interior_color}
@@ -1031,7 +1031,7 @@ function AddVehicle() {
                             />
 
 
-                            <InputField
+                            <InputFieldRed
                                 label="Location"
                                 name="location"
                                 value={form.location}
@@ -1042,14 +1042,14 @@ function AddVehicle() {
 
                         </div>
 
-                    </FormSection>
+                    </FormSectionRed>
 
 
                     {/* =================================================
                         DESCRIPTION
                     ================================================= */}
 
-                    <FormSection
+                    <FormSectionRed
                         icon={<FileText size={20} />}
                         title="Vehicle Description"
                         description="Write a detailed description that customers can read."
@@ -1061,21 +1061,21 @@ function AddVehicle() {
                             onChange={handleChange}
                             rows={7}
                             placeholder="Describe the vehicle, its condition, features, service history and anything else customers should know..."
-                            className="w-full resize-y rounded-xl border border-blue-100 bg-[#F5F9FC] px-4 py-3.5 text-sm text-[#12395B] outline-none transition placeholder:text-slate-400 focus:border-[#2F80C0] focus:bg-white focus:ring-2 focus:ring-blue-100"
+                            className="w-full resize-y rounded-xl border border-[#8B1A1A]/20 bg-[#FDF8F5] px-4 py-3.5 text-sm text-[#2D1B0E] outline-none transition placeholder:text-[#8A7A6A] focus:border-[#8B1A1A] focus:bg-white focus:ring-2 focus:ring-[#8B1A1A]/10"
                         />
 
-                        <p className="mt-2 text-xs text-slate-400">
+                        <p className="mt-2 text-xs text-[#8A7A6A]">
                             {form.description.length} characters
                         </p>
 
-                    </FormSection>
+                    </FormSectionRed>
 
 
                     {/* =================================================
                         IMAGES
                     ================================================= */}
 
-                    <FormSection
+                    <FormSectionRed
                         icon={<ImagePlus size={20} />}
                         title="Vehicle Photos"
                         description="Upload multiple high-quality images. Select one as the primary image."
@@ -1098,20 +1098,20 @@ function AddVehicle() {
                             onClick={() =>
                                 fileInputRef.current?.click()
                             }
-                            className="group flex w-full flex-col items-center justify-center rounded-2xl border-2 border-dashed border-blue-200 bg-[#F5F9FC] px-6 py-12 text-center transition hover:border-[#2F80C0] hover:bg-[#EAF6FF]"
+                            className="group flex w-full flex-col items-center justify-center rounded-2xl border-2 border-dashed border-[#8B1A1A]/20 bg-[#FDF8F5] px-6 py-12 text-center transition hover:border-[#8B1A1A] hover:bg-[#FDF8F5]/80"
                         >
 
-                            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white text-[#2F80C0] shadow-sm transition group-hover:scale-105">
+                            <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-white border border-[#8B1A1A]/20 text-[#8B1A1A] shadow-sm transition group-hover:scale-105 group-hover:shadow-md">
 
                                 <Upload size={28} />
 
                             </div>
 
-                            <p className="mt-4 text-lg font-extrabold text-[#12395B]">
+                            <p className="mt-4 text-lg font-extrabold text-[#2D1B0E]">
                                 Click to upload vehicle photos
                             </p>
 
-                            <p className="mt-1 text-sm text-slate-400">
+                            <p className="mt-1 text-sm text-[#6A5A4A]">
                                 PNG, JPG or WEBP · Multiple images supported
                             </p>
 
@@ -1128,11 +1128,11 @@ function AddVehicle() {
 
                                     <div>
 
-                                        <h3 className="font-extrabold text-[#12395B]">
+                                        <h3 className="font-extrabold text-[#2D1B0E]">
                                             Selected Photos
                                         </h3>
 
-                                        <p className="text-sm text-slate-400">
+                                        <p className="text-sm text-[#6A5A4A]">
                                             {images.length} image
                                             {images.length !== 1
                                                 ? "s"
@@ -1153,8 +1153,8 @@ function AddVehicle() {
                                                 key={image.id}
                                                 className={`group relative overflow-hidden rounded-2xl border-2 bg-white ${
                                                     image.isPrimary
-                                                        ? "border-[#2F80C0]"
-                                                        : "border-blue-100"
+                                                        ? "border-[#8B1A1A]"
+                                                        : "border-[#8B1A1A]/20"
                                                 }`}
                                             >
 
@@ -1173,7 +1173,7 @@ function AddVehicle() {
 
                                                 {image.isPrimary && (
 
-                                                    <div className="absolute left-2 top-2 flex items-center gap-1 rounded-full bg-[#12395B] px-2.5 py-1 text-[10px] font-bold text-white shadow">
+                                                    <div className="absolute left-2 top-2 flex items-center gap-1 rounded-full bg-[#8B1A1A] px-2.5 py-1 text-[10px] font-bold text-white shadow">
 
                                                         <Star
                                                             size={11}
@@ -1215,7 +1215,7 @@ function AddVehicle() {
                                                                 image.id
                                                             )
                                                         }
-                                                        className="absolute bottom-2 left-2 rounded-lg bg-white/95 px-2.5 py-1.5 text-[11px] font-bold text-[#12395B] opacity-0 shadow transition group-hover:opacity-100 hover:bg-[#12395B] hover:text-white"
+                                                        className="absolute bottom-2 left-2 rounded-lg bg-white/95 px-2.5 py-1.5 text-[11px] font-bold text-[#2D1B0E] opacity-0 shadow transition group-hover:opacity-100 hover:bg-[#8B1A1A] hover:text-white"
                                                     >
 
                                                         <span className="flex items-center gap-1">
@@ -1241,20 +1241,20 @@ function AddVehicle() {
 
                         )}
 
-                    </FormSection>
+                    </FormSectionRed>
 
 
                     {/* =================================================
                         ACTIONS
                     ================================================= */}
 
-                    <div className="sticky bottom-0 z-20 -mx-5 border-t border-blue-100 bg-white/95 px-5 py-4 backdrop-blur md:-mx-8 md:px-8">
+                    <div className="sticky bottom-0 z-20 -mx-5 border-t border-[#8B1A1A]/20 bg-white/95 px-5 py-4 backdrop-blur md:-mx-8 md:px-8">
 
                         <div className="mx-auto flex max-w-7xl flex-col-reverse gap-3 sm:flex-row sm:justify-end">
 
                             <Link
                                 to="/dashboard"
-                                className="flex items-center justify-center rounded-xl border border-blue-100 px-6 py-3.5 font-bold text-[#12395B] transition hover:bg-[#F5F9FC]"
+                                className="flex items-center justify-center rounded-xl border border-[#8B1A1A]/20 px-6 py-3.5 font-bold text-[#2D1B0E] transition hover:bg-[#FDF8F5]"
                             >
                                 Cancel
                             </Link>
@@ -1266,7 +1266,7 @@ function AddVehicle() {
                                     saving ||
                                     uploading
                                 }
-                                className="flex items-center justify-center gap-2 rounded-xl bg-[#12395B] px-7 py-3.5 font-bold text-white shadow-lg shadow-blue-900/10 transition hover:bg-[#2F80C0] disabled:cursor-not-allowed disabled:opacity-60"
+                                className="flex items-center justify-center gap-2 rounded-xl bg-[#8B1A1A] px-7 py-3.5 font-bold text-white shadow-lg shadow-[#8B1A1A]/20 transition hover:bg-[#6B1515] hover:shadow-xl hover:shadow-[#8B1A1A]/30 disabled:cursor-not-allowed disabled:opacity-60"
                             >
 
                                 {saving || uploading ? (
@@ -1290,7 +1290,6 @@ function AddVehicle() {
                                         <CheckCircle2 size={18} />
 
                                         Save Vehicle
-
                                     </>
 
                                 )}
@@ -1312,10 +1311,10 @@ function AddVehicle() {
 
 
 // =========================================================
-// FORM SECTION
+// FORM SECTION - REDISH
 // =========================================================
 
-function FormSection({
+function FormSectionRed({
     icon,
     title,
     description,
@@ -1324,13 +1323,13 @@ function FormSection({
 
     return (
 
-        <section className="overflow-hidden rounded-2xl border border-blue-100 bg-white shadow-[0_8px_30px_rgba(18,57,91,0.05)]">
+        <section className="overflow-hidden rounded-2xl border border-[#8B1A1A]/20 bg-white shadow-[0_8px_30px_rgba(139,26,26,0.06)]">
 
-            <div className="border-b border-blue-50 px-5 py-5 md:px-7">
+            <div className="border-b border-[#8B1A1A]/10 px-5 py-5 md:px-7">
 
                 <div className="flex items-start gap-3">
 
-                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#EAF6FF] text-[#2F80C0]">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-[#8B1A1A]/10 text-[#8B1A1A]">
 
                         {icon}
 
@@ -1338,11 +1337,11 @@ function FormSection({
 
                     <div>
 
-                        <h2 className="text-lg font-extrabold text-[#12395B]">
+                        <h2 className="text-lg font-extrabold text-[#2D1B0E]">
                             {title}
                         </h2>
 
-                        <p className="mt-1 text-sm text-slate-400">
+                        <p className="mt-1 text-sm text-[#6A5A4A]">
                             {description}
                         </p>
 
@@ -1367,9 +1366,9 @@ function FormSection({
 
 
 
-// INPUT
+// INPUT - REDISH
 
-function InputField({
+function InputFieldRed({
     label,
     name,
     type = "text",
@@ -1386,7 +1385,7 @@ function InputField({
 
         <div>
 
-            <label className="mb-2 block text-sm font-bold text-[#12395B]">
+            <label className="mb-2 block text-sm font-bold text-[#2D1B0E]">
 
                 {label}
 
@@ -1403,7 +1402,7 @@ function InputField({
 
                 {icon && (
 
-                    <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#2F80C0]">
+                    <span className="pointer-events-none absolute left-3 top-1/2 -translate-y-1/2 text-[#8B1A1A]">
 
                         {icon}
 
@@ -1421,7 +1420,7 @@ function InputField({
                     required={required}
                     min={min}
                     max={max}
-                    className={`w-full rounded-xl border border-blue-100 bg-[#F5F9FC] px-4 py-3.5 text-sm text-[#12395B] outline-none transition placeholder:text-slate-400 focus:border-[#2F80C0] focus:bg-white focus:ring-2 focus:ring-blue-100 ${
+                    className={`w-full rounded-xl border border-[#8B1A1A]/20 bg-[#FDF8F5] px-4 py-3.5 text-sm text-[#2D1B0E] outline-none transition placeholder:text-[#8A7A6A] focus:border-[#8B1A1A] focus:bg-white focus:ring-2 focus:ring-[#8B1A1A]/10 ${
                         icon ? "pl-10" : ""
                     }`}
                 />
@@ -1436,10 +1435,10 @@ function InputField({
 
 
 // =========================================================
-// SELECT
+// SELECT - REDISH
 // =========================================================
 
-function SelectField({
+function SelectFieldRed({
     label,
     name,
     value,
@@ -1453,7 +1452,7 @@ function SelectField({
 
         <div>
 
-            <label className="mb-2 block text-sm font-bold text-[#12395B]">
+            <label className="mb-2 block text-sm font-bold text-[#2D1B0E]">
 
                 {label}
 
@@ -1471,7 +1470,7 @@ function SelectField({
                 value={value}
                 onChange={onChange}
                 required={required}
-                className="w-full rounded-xl border border-blue-100 bg-[#F5F9FC] px-4 py-3.5 text-sm text-[#12395B] outline-none transition focus:border-[#2F80C0] focus:bg-white focus:ring-2 focus:ring-blue-100"
+                className="w-full rounded-xl border border-[#8B1A1A]/20 bg-[#FDF8F5] px-4 py-3.5 text-sm text-[#2D1B0E] outline-none transition focus:border-[#8B1A1A] focus:bg-white focus:ring-2 focus:ring-[#8B1A1A]/10"
             >
 
                 <option value="">
