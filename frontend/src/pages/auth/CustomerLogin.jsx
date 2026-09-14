@@ -16,6 +16,8 @@ import { useTranslation } from "react-i18next";
 
 import Navbar from "../../components/Navbar";
 
+import api from "../../services/api";
+
 function CustomerLogin() {
     const navigate = useNavigate();
 
@@ -33,9 +35,9 @@ function CustomerLogin() {
 
     const [error, setError] = useState("");
 
-    const API_URL =
-        import.meta.env.VITE_API_URL ||
-        "http://127.0.0.1:8000/api";
+    // ============================================================
+    // FORM CHANGE
+    // ============================================================
 
     const handleChange = (e) => {
         setForm({
@@ -46,6 +48,10 @@ function CustomerLogin() {
         setError("");
     };
 
+    // ============================================================
+    // LOGIN
+    // ============================================================
+
     const handleSubmit = async (e) => {
         e.preventDefault();
 
@@ -55,42 +61,22 @@ function CustomerLogin() {
             setError(
                 t("login.errors.required")
             );
+
             return;
         }
 
         try {
             setLoading(true);
 
-            const response = await fetch(
-                `${API_URL}/auth/token/`,
+            const response = await api.post(
+                "/auth/token/",
                 {
-                    method: "POST",
-
-                    headers: {
-                        "Content-Type":
-                            "application/json",
-                    },
-
-                    body: JSON.stringify({
-                        username:
-                            form.username,
-                        password:
-                            form.password,
-                    }),
+                    username: form.username,
+                    password: form.password,
                 }
             );
 
-            const data =
-                await response.json();
-
-            if (!response.ok) {
-                throw new Error(
-                    data.detail ||
-                        t(
-                            "login.errors.invalidCredentials"
-                        )
-                );
-            }
+            const data = response.data;
 
             localStorage.setItem(
                 "customer_access_token",
@@ -114,14 +100,20 @@ function CustomerLogin() {
                 err
             );
 
-            setError(
+            const message =
+                err.response?.data?.detail ||
                 err.message ||
-                    t("login.errors.failed")
-            );
+                t("login.errors.failed");
+
+            setError(message);
         } finally {
             setLoading(false);
         }
     };
+
+    // ============================================================
+    // RENDER
+    // ============================================================
 
     return (
         <>
@@ -130,6 +122,7 @@ function CustomerLogin() {
             <main className="flex min-h-[calc(100vh-81px)] items-center justify-center bg-[#FDF8F5] px-5 py-12">
                 <div className="w-full max-w-md">
                     {/* TITLE */}
+
                     <div className="mb-8 text-center">
                         <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl border border-[#F4A460]/20 bg-[#B22222]/10">
                             <LogIn
@@ -150,8 +143,10 @@ function CustomerLogin() {
                     </div>
 
                     {/* CARD */}
+
                     <div className="rounded-2xl border border-[#F4A460]/20 bg-white p-6 shadow-xl shadow-[#B22222]/5 md:p-8">
                         {/* ERROR */}
+
                         {error && (
                             <div className="mb-5 rounded-xl border border-red-100 bg-red-50 px-4 py-3 text-sm font-semibold text-red-600">
                                 {error}
@@ -163,6 +158,7 @@ function CustomerLogin() {
                             className="space-y-5"
                         >
                             {/* USERNAME */}
+
                             <div>
                                 <label className="mb-2 block text-sm font-bold text-[#2D1B0E]">
                                     {t(
@@ -196,6 +192,7 @@ function CustomerLogin() {
                             </div>
 
                             {/* PASSWORD */}
+
                             <div>
                                 <div className="mb-2 flex items-center justify-between">
                                     <label className="block text-sm font-bold text-[#2D1B0E]">
@@ -273,6 +270,7 @@ function CustomerLogin() {
                             </div>
 
                             {/* SUBMIT */}
+
                             <button
                                 type="submit"
                                 disabled={loading}
@@ -304,6 +302,7 @@ function CustomerLogin() {
                         </form>
 
                         {/* REGISTER */}
+
                         <div className="mt-6 border-t border-[#F4A460]/10 pt-6 text-center">
                             <p className="text-sm text-[#6A5A4A]">
                                 {t(
@@ -323,6 +322,7 @@ function CustomerLogin() {
                     </div>
 
                     {/* ADMIN LOGIN */}
+
                     <div className="mt-6 text-center">
                         <p className="text-xs text-[#8A7A6A]">
                             {t(
@@ -347,4 +347,3 @@ function CustomerLogin() {
 }
 
 export default CustomerLogin;
-

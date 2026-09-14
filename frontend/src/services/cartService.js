@@ -1,5 +1,5 @@
 const API_URL =
-    "http://magari-hub.onrender.com/api";
+    "https://magari-hub.onrender.com/api";
 
 
 // ============================================================

@@ -29,7 +29,7 @@ function VehicleCard({ vehicle }) {
      * Django already returns the complete image URL.
      *
      * Example:
-     * http://127.0.0.1:8000/media/vehicles/example.jpg
+     
      *
      * Therefore we don't add the Django URL again.
      */

@@ -38,11 +38,15 @@ import { isCustomerAuthenticated } from "../../services/customerAuthService";
 
 function VehicleDetails() {
     const { id } = useParams();
+
     const { t } = useTranslation();
 
     const [vehicle, setVehicle] = useState(null);
+
     const [loading, setLoading] = useState(true);
+
     const [selectedImage, setSelectedImage] = useState(0);
+
     const [favourite, setFavourite] = useState(false);
 
     // ============================================================
@@ -50,8 +54,11 @@ function VehicleDetails() {
     // ============================================================
 
     const [inCart, setInCart] = useState(false);
+
     const [cartLoading, setCartLoading] = useState(false);
+
     const [cartError, setCartError] = useState("");
+
     const [cartSuccess, setCartSuccess] = useState("");
 
     // ============================================================
@@ -67,7 +74,9 @@ function VehicleDetails() {
     const [inquiryMessage, setInquiryMessage] = useState("");
 
     const [inquiryLoading, setInquiryLoading] = useState(false);
+
     const [inquirySuccess, setInquirySuccess] = useState("");
+
     const [inquiryError, setInquiryError] = useState("");
 
     // ============================================================
@@ -129,6 +138,7 @@ function VehicleDetails() {
         e.preventDefault();
 
         setInquiryError("");
+
         setInquirySuccess("");
 
         if (!inquirySubject.trim()) {
@@ -164,6 +174,7 @@ function VehicleDetails() {
 
             setTimeout(() => {
                 setShowInquiry(false);
+
                 setInquirySuccess("");
             }, 2000);
         } catch (error) {
@@ -189,6 +200,7 @@ function VehicleDetails() {
 
         if (!isCustomerAuthenticated()) {
             alert(t("vehicleDetails.cart.loginRequired"));
+
             return;
         }
 
@@ -204,6 +216,7 @@ function VehicleDetails() {
             setCartLoading(true);
 
             setCartError("");
+
             setCartSuccess("");
 
             await addToCart(vehicle.id);
@@ -279,7 +292,10 @@ function VehicleDetails() {
                         to="/vehicles"
                         className="mt-6 inline-flex rounded-xl bg-gradient-to-r from-[#B22222] to-[#8B1A1A] px-6 py-3 font-bold text-white shadow-lg shadow-[#B22222]/20 transition hover:shadow-xl hover:shadow-[#B22222]/40"
                     >
-                        <ArrowLeft size={18} className="mr-2" />
+                        <ArrowLeft
+                            size={18}
+                            className="mr-2"
+                        />
 
                         {t("vehicleDetails.notFound.back")}
                     </Link>
@@ -310,6 +326,7 @@ function VehicleDetails() {
             return fallback;
         }
 
+        // Cloudinary / external image URL
         if (
             image.image.startsWith("http://") ||
             image.image.startsWith("https://")
@@ -317,13 +334,22 @@ function VehicleDetails() {
             return image.image;
         }
 
+        // Only used if the backend returns a relative image path.
+        // Never use localhost in production.
         const apiBase =
             import.meta.env.VITE_API_URL ||
-            "http://127.0.0.1:8000/api";
+            "https://magari-hub.onrender.com/api";
 
-        const backendBase = apiBase.replace(/\/api\/?$/, "");
+        const backendBase = apiBase.replace(
+            /\/api\/?$/,
+            ""
+        );
 
-        return `${backendBase}${image.image}`;
+        const imagePath = image.image.startsWith("/")
+            ? image.image
+            : `/${image.image}`;
+
+        return `${backendBase}${imagePath}`;
     };
 
     // ============================================================
@@ -381,12 +407,15 @@ function VehicleDetails() {
             petrol: t(
                 "vehicleDetails.values.fuel.petrol"
             ),
+
             diesel: t(
                 "vehicleDetails.values.fuel.diesel"
             ),
+
             hybrid: t(
                 "vehicleDetails.values.fuel.hybrid"
             ),
+
             electric: t(
                 "vehicleDetails.values.fuel.electric"
             ),
@@ -400,6 +429,7 @@ function VehicleDetails() {
             automatic: t(
                 "vehicleDetails.values.transmission.automatic"
             ),
+
             manual: t(
                 "vehicleDetails.values.transmission.manual"
             ),
@@ -417,15 +447,19 @@ function VehicleDetails() {
             available: t(
                 "vehicleDetails.status.available"
             ),
+
             reserved: t(
                 "vehicleDetails.status.reserved"
             ),
+
             sold: t(
                 "vehicleDetails.status.sold"
             ),
+
             draft: t(
                 "vehicleDetails.status.draft"
             ),
+
             archived: t(
                 "vehicleDetails.status.archived"
             ),
@@ -528,9 +562,7 @@ function VehicleDetails() {
                                 {images.length > 1 && (
                                     <button
                                         type="button"
-                                        onClick={
-                                            nextImage
-                                        }
+                                        onClick={nextImage}
                                         aria-label={t(
                                             "vehicleDetails.gallery.next"
                                         )}
@@ -689,9 +721,7 @@ function VehicleDetails() {
                                 label={t(
                                     "vehicleDetails.specs.year"
                                 )}
-                                value={
-                                    vehicle.year
-                                }
+                                value={vehicle.year}
                             />
 
                             <SpecRed
@@ -1099,9 +1129,11 @@ function VehicleDetails() {
                                         setShowInquiry(
                                             false
                                         );
+
                                         setInquiryError(
                                             ""
                                         );
+
                                         setInquirySuccess(
                                             ""
                                         );
@@ -1134,9 +1166,7 @@ function VehicleDetails() {
                                 </p>
 
                                 <p className="mt-1 font-extrabold text-[#2D1B0E]">
-                                    {
-                                        vehicle.brand_name
-                                    }{" "}
+                                    {vehicle.brand_name}{" "}
                                     {vehicle.model}
 
                                     {vehicle.year
@@ -1224,9 +1254,11 @@ function VehicleDetails() {
                                         setShowInquiry(
                                             false
                                         );
+
                                         setInquiryError(
                                             ""
                                         );
+
                                         setInquirySuccess(
                                             ""
                                         );
@@ -1256,9 +1288,7 @@ function VehicleDetails() {
                                     ) : (
                                         <>
                                             <MessageCircle
-                                                size={
-                                                    18
-                                                }
+                                                size={18}
                                             />
 
                                             {t(
@@ -1317,3 +1347,4 @@ function DetailRed({ label, value }) {
 }
 
 export default VehicleDetails;
+

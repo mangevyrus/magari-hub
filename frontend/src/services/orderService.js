@@ -1,5 +1,5 @@
 
-const API_URL = "http://magari-hub.onrender.com/api";
+const API_URL = "https://magari-hub.onrender.com/api";
 
 // ============================================================
 // GET CUSTOMER TOKEN

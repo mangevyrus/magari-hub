@@ -1,6 +1,8 @@
+
 import { useEffect, useMemo, useState } from "react";
+
 import { Link, useNavigate } from "react-router-dom";
-import magarilogo from "../../assets/magarilogo.png";
+
 import {
     CarFront,
     CheckCircle2,
@@ -10,22 +12,15 @@ import {
     ArrowRight,
     TrendingUp,
     Star,
-    Users,
     Settings,
-    LogOut,
     Menu,
-    X,
-    LayoutDashboard,
-    List,
     BarChart3,
-    MessageCircle,
 } from "lucide-react";
 
 import api from "../../services/api";
 import AdminLayout from "../../layouts/AdminLayout";
 
 function AdminDashboard() {
-
     const navigate = useNavigate();
 
     const [vehicles, setVehicles] = useState([]);
@@ -33,19 +28,13 @@ function AdminDashboard() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
     const [error, setError] = useState("");
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | LOAD VEHICLES
-    |--------------------------------------------------------------------------
-    */
+    // ============================================================
+    // LOAD VEHICLES
+    // ============================================================
 
     useEffect(() => {
-
         const loadDashboard = async () => {
-
             try {
-
                 setLoading(true);
                 setError("");
 
@@ -56,40 +45,60 @@ function AdminDashboard() {
                     : response.data.results || [];
 
                 setVehicles(data);
-
             } catch (err) {
+                console.error(
+                    "Dashboard loading error:",
+                    err
+                );
 
-                console.error("Dashboard loading error:", err);
-                setError("Unable to load dashboard data.");
-
+                setError(
+                    "Unable to load dashboard data."
+                );
             } finally {
-
                 setLoading(false);
-
             }
-
         };
 
         loadDashboard();
-
     }, []);
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | STATISTICS
-    |--------------------------------------------------------------------------
-    */
+    // ============================================================
+    // STATISTICS
+    // ============================================================
 
     const statistics = useMemo(() => {
-
         const total = vehicles.length;
-        const available = vehicles.filter(vehicle => vehicle.status === "available").length;
-        const sold = vehicles.filter(vehicle => vehicle.status === "sold").length;
-        const reserved = vehicles.filter(vehicle => vehicle.status === "reserved").length;
-        const featured = vehicles.filter(vehicle => vehicle.featured).length;
-        const draft = vehicles.filter(vehicle => vehicle.status === "draft").length;
-        const totalValue = vehicles.reduce((sum, vehicle) => sum + Number(vehicle.price || 0), 0);
+
+        const available = vehicles.filter(
+            (vehicle) =>
+                vehicle.status === "available"
+        ).length;
+
+        const sold = vehicles.filter(
+            (vehicle) =>
+                vehicle.status === "sold"
+        ).length;
+
+        const reserved = vehicles.filter(
+            (vehicle) =>
+                vehicle.status === "reserved"
+        ).length;
+
+        const featured = vehicles.filter(
+            (vehicle) =>
+                vehicle.featured
+        ).length;
+
+        const draft = vehicles.filter(
+            (vehicle) =>
+                vehicle.status === "draft"
+        ).length;
+
+        const totalValue = vehicles.reduce(
+            (sum, vehicle) =>
+                sum + Number(vehicle.price || 0),
+            0
+        );
 
         return {
             total,
@@ -100,94 +109,84 @@ function AdminDashboard() {
             draft,
             totalValue,
         };
-
     }, [vehicles]);
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | RECENT VEHICLES
-    |--------------------------------------------------------------------------
-    */
+    // ============================================================
+    // RECENT VEHICLES
+    // ============================================================
 
     const recentVehicles = useMemo(() => {
         return [...vehicles]
-            .sort((a, b) => new Date(b.created_at) - new Date(a.created_at))
+            .sort(
+                (a, b) =>
+                    new Date(b.created_at) -
+                    new Date(a.created_at)
+            )
             .slice(0, 5);
     }, [vehicles]);
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | LOGOUT
-    |--------------------------------------------------------------------------
-    */
+    // ============================================================
+    // LOGOUT
+    // ============================================================
 
     const handleLogout = () => {
-
         localStorage.removeItem("access_token");
         localStorage.removeItem("refresh_token");
         localStorage.removeItem("admin_token");
-        navigate("/admin/login");
 
+        navigate("/admin/login");
     };
 
-
-    /*
-    |--------------------------------------------------------------------------
-    | FORMAT PRICE
-    |--------------------------------------------------------------------------
-    */
+    // ============================================================
+    // FORMAT PRICE
+    // ============================================================
 
     const formatPrice = (price) => {
-        return Number(price || 0).toLocaleString();
+        return Number(
+            price || 0
+        ).toLocaleString();
     };
 
-
     return (
-
         <AdminLayout>
 
-
-            {/* ====================================================== */}
-            {/* MOBILE OVERLAY */}
-            {/* ====================================================== */}
+            {/* ======================================================
+                MOBILE OVERLAY
+            ====================================================== */}
 
             {sidebarOpen && (
-
                 <div
                     className="fixed inset-0 z-40 bg-[#2D1B0E]/40 backdrop-blur-sm lg:hidden"
-                    onClick={() => setSidebarOpen(false)}
+                    onClick={() =>
+                        setSidebarOpen(false)
+                    }
                 />
-
             )}
 
-
-            {/* ====================================================== */}
-            {/* MAIN AREA */}
-            {/* ====================================================== */}
+            {/* ======================================================
+                MAIN AREA
+            ====================================================== */}
 
             <div className="lg:pl-72">
 
-
-                {/* ================================================== */}
-                {/* TOP BAR */}
-                {/* ================================================== */}
+                {/* ==================================================
+                    TOP BAR
+                ================================================== */}
 
                 <header className="sticky top-0 z-30 border-b border-[#8B1A1A]/20 bg-white/95 backdrop-blur">
 
                     <div className="flex h-20 items-center justify-between px-5 md:px-8">
 
                         <button
-                            onClick={() => setSidebarOpen(true)}
+                            onClick={() =>
+                                setSidebarOpen(true)
+                            }
                             className="rounded-xl p-2 text-[#2D1B0E] hover:bg-[#8B1A1A]/5 lg:hidden"
                         >
                             <Menu size={23} />
                         </button>
 
-
                         <div className="hidden lg:block">
-
                             <p className="text-sm text-[#6A5A4A]">
                                 Welcome back
                             </p>
@@ -195,38 +194,32 @@ function AdminDashboard() {
                             <h2 className="font-extrabold text-[#2D1B0E]">
                                 Admin Dashboard
                             </h2>
-
                         </div>
 
-
                         <div className="flex items-center gap-3">
-
                             <Link
                                 to="/admin/vehicles/new"
                                 className="inline-flex items-center gap-2 rounded-xl bg-[#8B1A1A] px-4 py-3 text-sm font-bold text-white shadow-lg shadow-[#8B1A1A]/20 transition hover:bg-[#6B1515] hover:shadow-xl hover:shadow-[#8B1A1A]/30"
                             >
                                 <Plus size={17} />
-                                <span className="hidden sm:inline">Add Vehicle</span>
+
+                                <span className="hidden sm:inline">
+                                    Add Vehicle
+                                </span>
                             </Link>
-
                         </div>
-
                     </div>
-
                 </header>
 
-
-                {/* ================================================== */}
-                {/* CONTENT */}
-                {/* ================================================== */}
+                {/* ==================================================
+                    CONTENT
+                ================================================== */}
 
                 <main className="mx-auto max-w-7xl px-5 py-8 md:px-8">
-
 
                     {/* PAGE TITLE */}
 
                     <div className="mb-8">
-
                         <p className="text-sm font-bold uppercase tracking-[0.2em] text-[#8B1A1A]">
                             Overview
                         </p>
@@ -239,98 +232,113 @@ function AdminDashboard() {
                             Monitor your vehicle inventory
                             and dealership activity.
                         </p>
-
                     </div>
-
 
                     {/* ERROR */}
 
                     {error && (
-
                         <div className="mb-6 rounded-xl border border-red-100 bg-red-50 p-4 text-sm font-semibold text-red-600">
                             {error}
                         </div>
-
                     )}
 
-
-                    {/* ================================================== */}
-                    {/* STAT CARDS */}
-                    {/* ================================================== */}
+                    {/* ==================================================
+                        STAT CARDS
+                    ================================================== */}
 
                     <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
 
-
                         <DashboardStat
                             title="Total Vehicles"
-                            value={loading ? "..." : statistics.total}
+                            value={
+                                loading
+                                    ? "..."
+                                    : statistics.total
+                            }
                             icon={CarFront}
                             description="All inventory"
                         />
 
-
                         <DashboardStat
                             title="Available"
-                            value={loading ? "..." : statistics.available}
+                            value={
+                                loading
+                                    ? "..."
+                                    : statistics.available
+                            }
                             icon={CheckCircle2}
                             description="Ready for sale"
                         />
 
-
                         <DashboardStat
                             title="Sold Vehicles"
-                            value={loading ? "..." : statistics.sold}
+                            value={
+                                loading
+                                    ? "..."
+                                    : statistics.sold
+                            }
                             icon={CircleDollarSign}
                             description="Completed sales"
                         />
 
-
                         <DashboardStat
                             title="Reserved"
-                            value={loading ? "..." : statistics.reserved}
+                            value={
+                                loading
+                                    ? "..."
+                                    : statistics.reserved
+                            }
                             icon={Clock3}
                             description="Currently reserved"
                         />
 
                     </div>
 
-
-                    {/* ================================================== */}
-                    {/* SECONDARY STATS */}
-                    {/* ================================================== */}
+                    {/* ==================================================
+                        SECONDARY STATS
+                    ================================================== */}
 
                     <div className="mt-5 grid gap-5 md:grid-cols-3">
-
 
                         <MiniStat
                             icon={Star}
                             title="Featured Vehicles"
-                            value={loading ? "..." : statistics.featured}
+                            value={
+                                loading
+                                    ? "..."
+                                    : statistics.featured
+                            }
                         />
-
 
                         <MiniStat
                             icon={Clock3}
                             title="Draft Listings"
-                            value={loading ? "..." : statistics.draft}
+                            value={
+                                loading
+                                    ? "..."
+                                    : statistics.draft
+                            }
                         />
-
 
                         <MiniStat
                             icon={TrendingUp}
                             title="Inventory Value"
-                            value={loading ? "..." : `TZS ${formatPrice(statistics.totalValue)}`}
+                            value={
+                                loading
+                                    ? "..."
+                                    : `TZS ${formatPrice(
+                                          statistics.totalValue
+                                      )}`
+                            }
                         />
 
                     </div>
 
-
-                    {/* ================================================== */}
-                    {/* RECENT VEHICLES + INVENTORY STATUS */}
-                    {/* ================================================== */}
+                    {/* ==================================================
+                        RECENT VEHICLES + INVENTORY STATUS
+                    ================================================== */}
 
                     <div className="mt-8 grid gap-6 xl:grid-cols-[1fr_360px]">
-
 
                         {/* RECENT VEHICLES */}
 
@@ -339,7 +347,6 @@ function AdminDashboard() {
                             <div className="flex items-center justify-between border-b border-[#8B1A1A]/20 px-5 py-5">
 
                                 <div>
-
                                     <h2 className="text-lg font-extrabold text-[#2D1B0E]">
                                         Recent Vehicles
                                     </h2>
@@ -348,44 +355,37 @@ function AdminDashboard() {
                                         Latest vehicles added
                                         to your inventory.
                                     </p>
-
                                 </div>
-
 
                                 <Link
                                     to="/admin/vehicles"
                                     className="inline-flex items-center gap-1 text-sm font-bold text-[#8B1A1A] hover:text-[#6B1515]"
                                 >
-
                                     View All
 
                                     <ArrowRight size={16} />
-
                                 </Link>
 
                             </div>
 
-
                             {loading ? (
-
                                 <div className="space-y-3 p-5">
-
-                                    {[1, 2, 3, 4].map(item => (
-
-                                        <div
-                                            key={item}
-                                            className="h-20 animate-pulse rounded-xl bg-[#FDF8F5] border border-[#8B1A1A]/10"
-                                        />
-
-                                    ))}
-
+                                    {[1, 2, 3, 4].map(
+                                        (item) => (
+                                            <div
+                                                key={item}
+                                                className="h-20 animate-pulse rounded-xl border border-[#8B1A1A]/10 bg-[#FDF8F5]"
+                                            />
+                                        )
+                                    )}
                                 </div>
-
                             ) : recentVehicles.length === 0 ? (
-
                                 <div className="px-5 py-16 text-center">
 
-                                    <CarFront size={32} className="mx-auto text-[#8B1A1A]" />
+                                    <CarFront
+                                        size={32}
+                                        className="mx-auto text-[#8B1A1A]"
+                                    />
 
                                     <p className="mt-3 font-bold text-[#2D1B0E]">
                                         No vehicles yet
@@ -399,30 +399,26 @@ function AdminDashboard() {
                                     </Link>
 
                                 </div>
-
                             ) : (
-
                                 <div>
-
-                                    {recentVehicles.map(vehicle => (
-
-                                        <RecentVehicle key={vehicle.id} vehicle={vehicle} />
-
-                                    ))}
-
+                                    {recentVehicles.map(
+                                        (vehicle) => (
+                                            <RecentVehicle
+                                                key={vehicle.id}
+                                                vehicle={vehicle}
+                                            />
+                                        )
+                                    )}
                                 </div>
-
                             )}
 
                         </section>
-
 
                         {/* INVENTORY STATUS */}
 
                         <section className="rounded-2xl border border-[#8B1A1A]/20 bg-white p-5 shadow-sm">
 
                             <div>
-
                                 <h2 className="text-lg font-extrabold text-[#2D1B0E]">
                                     Inventory Status
                                 </h2>
@@ -430,49 +426,58 @@ function AdminDashboard() {
                                 <p className="mt-1 text-sm text-[#6A5A4A]">
                                     Current inventory breakdown.
                                 </p>
-
                             </div>
-
 
                             <div className="mt-7 space-y-6">
 
                                 <ProgressRow
                                     label="Available"
-                                    value={statistics.available}
-                                    total={statistics.total}
+                                    value={
+                                        statistics.available
+                                    }
+                                    total={
+                                        statistics.total
+                                    }
                                 />
-
 
                                 <ProgressRow
                                     label="Reserved"
-                                    value={statistics.reserved}
-                                    total={statistics.total}
+                                    value={
+                                        statistics.reserved
+                                    }
+                                    total={
+                                        statistics.total
+                                    }
                                 />
-
 
                                 <ProgressRow
                                     label="Sold"
-                                    value={statistics.sold}
-                                    total={statistics.total}
+                                    value={
+                                        statistics.sold
+                                    }
+                                    total={
+                                        statistics.total
+                                    }
                                 />
-
 
                                 <ProgressRow
                                     label="Draft"
-                                    value={statistics.draft}
-                                    total={statistics.total}
+                                    value={
+                                        statistics.draft
+                                    }
+                                    total={
+                                        statistics.total
+                                    }
                                 />
 
                             </div>
-
                         </section>
 
                     </div>
 
-
-                    {/* ================================================== */}
-                    {/* QUICK ACTIONS */}
-                    {/* ================================================== */}
+                    {/* ==================================================
+                        QUICK ACTIONS
+                    ================================================== */}
 
                     <section className="mt-8">
 
@@ -480,9 +485,7 @@ function AdminDashboard() {
                             Quick Actions
                         </h2>
 
-
                         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-
 
                             <QuickAction
                                 to="/admin/vehicles/new"
@@ -491,7 +494,6 @@ function AdminDashboard() {
                                 description="Create a new listing"
                             />
 
-
                             <QuickAction
                                 to="/admin/vehicles"
                                 icon={CarFront}
@@ -499,14 +501,12 @@ function AdminDashboard() {
                                 description="View your inventory"
                             />
 
-
                             <QuickAction
                                 to="/admin/analytics"
                                 icon={BarChart3}
                                 title="View Analytics"
                                 description="Review performance"
                             />
-
 
                             <QuickAction
                                 to="/admin/settings"
@@ -516,21 +516,17 @@ function AdminDashboard() {
                             />
 
                         </div>
-
                     </section>
 
                 </main>
-
             </div>
-
         </AdminLayout>
     );
 }
 
-
-/* ================================================================= */
-/* DASHBOARD STAT - DEEP REDISH */
-/* ================================================================= */
+// =================================================================
+// DASHBOARD STAT
+// =================================================================
 
 function DashboardStat({
     title,
@@ -538,15 +534,12 @@ function DashboardStat({
     icon: Icon,
     description,
 }) {
-
     return (
-
-        <div className="rounded-2xl border border-[#8B1A1A]/15 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-[#8B1A1A]/30">
+        <div className="rounded-2xl border border-[#8B1A1A]/15 bg-white p-5 shadow-sm transition hover:border-[#8B1A1A]/30 hover:shadow-md">
 
             <div className="flex items-start justify-between">
 
                 <div>
-
                     <p className="text-sm font-semibold text-[#6A5A4A]">
                         {title}
                     </p>
@@ -558,47 +551,40 @@ function DashboardStat({
                     <p className="mt-2 text-xs text-[#8A7A6A]">
                         {description}
                     </p>
-
                 </div>
 
-
                 <div className="flex h-12 w-12 items-center justify-center rounded-xl bg-[#8B1A1A]/10">
-
-                    <Icon size={22} className="text-[#8B1A1A]" />
-
+                    <Icon
+                        size={22}
+                        className="text-[#8B1A1A]"
+                    />
                 </div>
 
             </div>
-
         </div>
-
     );
 }
 
-
-/* ================================================================= */
-/* MINI STAT - DEEP REDISH */
-/* ================================================================= */
+// =================================================================
+// MINI STAT
+// =================================================================
 
 function MiniStat({
     icon: Icon,
     title,
     value,
 }) {
-
     return (
-
-        <div className="flex items-center gap-4 rounded-2xl border border-[#8B1A1A]/15 bg-white p-5 shadow-sm transition hover:shadow-md hover:border-[#8B1A1A]/30">
+        <div className="flex items-center gap-4 rounded-2xl border border-[#8B1A1A]/15 bg-white p-5 shadow-sm transition hover:border-[#8B1A1A]/30 hover:shadow-md">
 
             <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-[#8B1A1A]/10">
-
-                <Icon size={20} className="text-[#8B1A1A]" />
-
+                <Icon
+                    size={20}
+                    className="text-[#8B1A1A]"
+                />
             </div>
 
-
             <div>
-
                 <p className="text-sm font-semibold text-[#6A5A4A]">
                     {title}
                 </p>
@@ -606,72 +592,87 @@ function MiniStat({
                 <p className="mt-1 text-2xl font-extrabold text-[#2D1B0E]">
                     {value}
                 </p>
-
             </div>
 
         </div>
-
     );
 }
 
+// =================================================================
+// RECENT VEHICLE
+// =================================================================
 
-/* ================================================================= */
-/* RECENT VEHICLE - DEEP REDISH */
-/* ================================================================= */
-
-function RecentVehicle({
-    vehicle,
-}) {
-
+function RecentVehicle({ vehicle }) {
     const getImage = () => {
+        const primary =
+            vehicle.images?.find(
+                (image) =>
+                    image.is_primary
+            );
 
-        const primary = vehicle.images?.find(image => image.is_primary);
-        const image = primary || vehicle.images?.[0];
+        const image =
+            primary ||
+            vehicle.images?.[0];
 
         if (!image?.image) {
             return null;
         }
 
-        if (image.image.startsWith("http")) {
+        // Cloudinary or other absolute URL
+        if (
+            image.image.startsWith("http://") ||
+            image.image.startsWith("https://")
+        ) {
             return image.image;
         }
 
-        return `http://127.0.0.1:8000${image.image}`;
-    };
+        // Production API fallback for relative media URLs
+        const apiBase =
+            import.meta.env.VITE_API_URL ||
+            "https://magari-hub.onrender.com/api";
 
+        const backendBase =
+            apiBase.replace(
+                /\/api\/?$/,
+                ""
+            );
+
+        const imagePath =
+            image.image.startsWith("/")
+                ? image.image
+                : `/${image.image}`;
+
+        return `${backendBase}${imagePath}`;
+    };
 
     const image = getImage();
 
-
     return (
-
         <Link
             to={`/admin/vehicles/${vehicle.id}/edit`}
             className="flex items-center gap-4 border-b border-[#8B1A1A]/10 px-5 py-4 transition last:border-b-0 hover:bg-[#FDF8F5]"
         >
 
-            <div className="h-16 w-20 shrink-0 overflow-hidden rounded-xl bg-[#8B1A1A]/10 border border-[#8B1A1A]/15">
+            <div className="h-16 w-20 shrink-0 overflow-hidden rounded-xl border border-[#8B1A1A]/15 bg-[#8B1A1A]/10">
 
                 {image ? (
-
                     <img
                         src={image}
-                        alt={`${vehicle.brand_name} ${vehicle.model}`}
+                        alt={`${vehicle.brand_name || ""} ${
+                            vehicle.model || ""
+                        }`}
                         className="h-full w-full object-cover"
                     />
-
                 ) : (
-
                     <div className="flex h-full items-center justify-center">
-
-                        <CarFront size={22} className="text-[#8B1A1A]" />
-
+                        <CarFront
+                            size={22}
+                            className="text-[#8B1A1A]"
+                        />
                     </div>
-
                 )}
 
             </div>
-
 
             <div className="min-w-0 flex-1">
 
@@ -685,16 +686,21 @@ function RecentVehicle({
 
                 <p className="mt-1 text-xs text-[#8A7A6A]">
                     {vehicle.year}
-                    {vehicle.variant ? ` • ${vehicle.variant}` : ""}
+
+                    {vehicle.variant
+                        ? ` • ${vehicle.variant}`
+                        : ""}
                 </p>
 
             </div>
 
-
             <div className="text-right">
 
                 <p className="font-extrabold text-[#2D1B0E]">
-                    TZS {Number(vehicle.price || 0).toLocaleString()}
+                    TZS{" "}
+                    {Number(
+                        vehicle.price || 0
+                    ).toLocaleString()}
                 </p>
 
                 <p className="mt-1 text-xs capitalize text-[#8A7A6A]">
@@ -704,33 +710,42 @@ function RecentVehicle({
             </div>
 
         </Link>
-
     );
 }
 
-
-/* ================================================================= */
-/* PROGRESS ROW - DEEP REDISH */
-/* ================================================================= */
+// =================================================================
+// PROGRESS ROW
+// =================================================================
 
 function ProgressRow({
     label,
     value,
     total,
 }) {
+    const percentage =
+        total > 0
+            ? Math.round(
+                  (value / total) * 100
+              )
+            : 0;
 
-    const percentage = total > 0 ? Math.round((value / total) * 100) : 0;
-
-    // Get color based on percentage
     const getColor = () => {
-        if (percentage > 75) return "bg-emerald-600";
-        if (percentage > 50) return "bg-[#8B1A1A]";
-        if (percentage > 25) return "bg-[#B22222]";
+        if (percentage > 75) {
+            return "bg-emerald-600";
+        }
+
+        if (percentage > 50) {
+            return "bg-[#8B1A1A]";
+        }
+
+        if (percentage > 25) {
+            return "bg-[#B22222]";
+        }
+
         return "bg-[#D4833A]";
     };
 
     return (
-
         <div>
 
             <div className="mb-2 flex items-center justify-between">
@@ -745,8 +760,7 @@ function ProgressRow({
 
             </div>
 
-
-            <div className="h-2 overflow-hidden rounded-full bg-[#FDF8F5] border border-[#8B1A1A]/10">
+            <div className="h-2 overflow-hidden rounded-full border border-[#8B1A1A]/10 bg-[#FDF8F5]">
 
                 <div
                     className={`h-full rounded-full ${getColor()} transition-all duration-500`}
@@ -756,16 +770,13 @@ function ProgressRow({
                 />
 
             </div>
-
         </div>
-
     );
 }
 
-
-/* ================================================================= */
-/* QUICK ACTION - DEEP REDISH */
-/* ================================================================= */
+// =================================================================
+// QUICK ACTION
+// =================================================================
 
 function QuickAction({
     to,
@@ -773,9 +784,7 @@ function QuickAction({
     title,
     description,
 }) {
-
     return (
-
         <Link
             to={to}
             className="group rounded-2xl border border-[#8B1A1A]/15 bg-white p-5 shadow-sm transition hover:-translate-y-1 hover:border-[#8B1A1A]/30 hover:shadow-lg"
@@ -784,11 +793,11 @@ function QuickAction({
             <div className="flex items-center justify-between">
 
                 <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-[#8B1A1A]/10">
-
-                    <Icon size={20} className="text-[#8B1A1A]" />
-
+                    <Icon
+                        size={20}
+                        className="text-[#8B1A1A]"
+                    />
                 </div>
-
 
                 <ArrowRight
                     size={18}
@@ -796,7 +805,6 @@ function QuickAction({
                 />
 
             </div>
-
 
             <h3 className="mt-5 font-extrabold text-[#2D1B0E]">
                 {title}
@@ -807,9 +815,7 @@ function QuickAction({
             </p>
 
         </Link>
-
     );
 }
-
 
 export default AdminDashboard;
