@@ -236,7 +236,7 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://magarihub.netlify.app",
+    "https://bingwa-magariused.netlify.app/",
 ]
 
 
@@ -253,7 +253,7 @@ if FRONTEND_URL and FRONTEND_URL not in CORS_ALLOWED_ORIGINS:
 CSRF_TRUSTED_ORIGINS = [
     "http://localhost:5173",
     "http://127.0.0.1:5173",
-    "https://magarihub.netlify.app",
+    "https://bingwa-magariused.netlify.app",
     "https://magari-hub.onrender.com",
 ]
 
