@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import {
@@ -28,7 +27,7 @@ import {
     getBrands,
 } from "../../services/vehicleService";
 
-import heroImage from "../../assets/hero-car.webp";
+import heroImage from "../../assets/hero-car.png";
 
 // ============================================================
 // COUNTRY DOMAIN CONFIGURATION
@@ -442,128 +441,184 @@ function Home() {
                 HERO
             ========================================================= */}
 
-            <section className="relative h-[90vh] min-h-[600px] w-full overflow-hidden">
+            <section className="relative h-screen min-h-[680px] w-full overflow-hidden bg-[#1A0A0A]">
 
-                <div className="absolute inset-0 h-full w-full">
+                {/* Background image - full bleed, no zoom */}
+                <img
+                    src={heroImage}
+                    alt="Bingwa Magari Used - Premium Cars"
+                    className="absolute inset-0 h-full w-full object-cover object-center"
+                />
 
-                    <img
-                        src={heroImage}
-                        alt="Bingwa Magari Used - Premium Cars"
-                        className="h-full w-full object-cover object-center"
-                    />
+                {/* Gradient overlay: dark LEFT (for text) → transparent RIGHT (car visible) */}
+                <div className="absolute inset-0 bg-gradient-to-r from-[#1A0A0A] via-[#1A0A0A]/85 via-40% to-transparent" />
 
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#000000]/55 via-[#450808]/50 to-black/20" />
+                {/* Soft bottom fade for the scroll indicator / card */}
+                <div className="absolute inset-x-0 bottom-0 h-48 bg-gradient-to-t from-[#1A0A0A]/95 to-transparent" />
 
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#4A0E0E]/70 via-transparent to-transparent" />
+                {/* Top subtle fade so the Navbar blends in */}
+                <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#1A0A0A]/70 to-transparent" />
 
-                    <div className="absolute right-0 top-0 h-full w-1/2 bg-gradient-to-l from-[#B22222]/20 via-transparent to-transparent" />
-                </div>
-
+                {/* Main content */}
                 <div className="relative z-10 flex h-full w-full items-center">
 
-                    <div className="mx-auto w-full max-w-7xl px-5 md:px-8">
+                    <div className="mx-auto w-full max-w-7xl px-6 md:px-10 lg:px-12">
 
-                        <div className="max-w-3xl">
+                        <div className="max-w-2xl">
 
-                            <div className="mb-6 flex items-center gap-3 text-sm font-medium text-[#F4A460]/80">
+                            {/* Phone badge */}
+                            <div className="mb-7 inline-flex items-center gap-3 rounded-full border border-[#F4A460]/30 bg-white/5 px-4 py-2 backdrop-blur-md">
+
+                                <span className="relative flex h-2 w-2">
+                                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-[#F4A460] opacity-75" />
+                                    <span className="relative inline-flex h-2 w-2 rounded-full bg-[#F4A460]" />
+                                </span>
 
                                 <Phone
-                                    size={16}
+                                    size={14}
                                     className="text-[#F4A460]"
                                 />
 
-                                <span>
+                                <span className="text-xs font-semibold tracking-wide text-[#F4A460]">
                                     {t("home.callUs")}
                                 </span>
                             </div>
 
-                            <div className="mb-4">
-
-                                <h1 className="text-5xl font-bold leading-[1.05] tracking-tight text-white md:text-6xl lg:text-7xl">
-
-                                    <span className="text-[#F4A460]">
-                                        BINGWA WA
-                                    </span>
-
-                                    <span className="text-white">
-                                        {" "}MAGARI USED
-                                    </span>
-
-                                </h1>
+                            {/* Eyebrow */}
+                            <div className="mb-4 flex items-center gap-3">
+                                <span className="h-px w-10 bg-gradient-to-r from-[#F4A460] to-transparent" />
+                                <span className="text-xs font-bold uppercase tracking-[0.3em] text-[#F4A460]">
+                                    Premium Marketplace
+                                </span>
                             </div>
 
-                            <p className="mb-6 text-3xl font-bold leading-tight text-white md:text-4xl lg:text-5xl">
+                            {/* Main heading */}
+                            <h1 className="mb-5 text-4xl font-black leading-[1.05] tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl">
+
+                                <span className="block bg-gradient-to-r from-[#F4A460] via-[#FFD4A0] to-[#F4A460] bg-clip-text text-transparent">
+                                    BINGWA WA
+                                </span>
+
+                                <span className="block text-white">
+                                    MAGARI USED
+                                </span>
+                            </h1>
+
+                            {/* Subheading */}
+                            <p className="mb-8 max-w-xl text-lg font-semibold leading-relaxed text-white/85 md:text-xl">
 
                                 {t("home.heroTitle")}
 
-                                <br />
-
-                                <span className="text-[#F4A460]">
+                                <span className="mt-1 block font-bold text-[#F4A460]">
                                     {t("home.heroHighlight")}
                                 </span>
                             </p>
 
-                            <div className="max-w-2xl rounded-2xl border border-[#F4A460]/20 bg-white/95 p-4 shadow-2xl shadow-[#4A0E0E]/30 backdrop-blur-sm">
+                            {/* Search card */}
+                            <div className="max-w-xl">
 
-                                <div className="flex flex-col gap-3 sm:flex-row">
+                                <div className="rounded-2xl border border-white/10 bg-white/[0.06] p-2 shadow-2xl shadow-black/40 backdrop-blur-xl">
 
-                                    <div className="flex flex-1 items-center gap-3 rounded-xl border border-[#F4A460]/10 bg-[#FDF8F5]/80 px-4 py-3">
+                                    <div className="flex flex-col gap-2 sm:flex-row">
 
-                                        <Search
-                                            size={20}
-                                            className="text-[#B22222]"
+                                        <div className="flex flex-1 items-center gap-3 rounded-xl bg-white px-4 py-3.5 transition-all focus-within:shadow-lg">
+
+                                            <Search
+                                                size={18}
+                                                className="shrink-0 text-[#B22222]"
+                                            />
+
+                                            <input
+                                                type="text"
+                                                value={searchTerm}
+                                                onChange={(e) =>
+                                                    setSearchTerm(
+                                                        e.target.value
+                                                    )
+                                                }
+                                                placeholder={t(
+                                                    "home.searchPlaceholder"
+                                                )}
+                                                className="w-full bg-transparent text-sm font-medium text-[#2D1B0E] outline-none placeholder:text-[#8A7A6A]"
+                                            />
+                                        </div>
+
+                                        <button
+                                            type="button"
+                                            onClick={handleSearch}
+                                            className="group flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#B22222] to-[#8B1A1A] px-7 py-3.5 font-bold text-white shadow-lg shadow-[#B22222]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[#B22222]/60 hover:brightness-110 active:scale-[0.98]"
+                                        >
+                                            {t("home.searchButton")}
+
+                                            <ArrowRight
+                                                size={18}
+                                                className="transition-transform duration-300 group-hover:translate-x-1"
+                                            />
+                                        </button>
+                                    </div>
+                                </div>
+
+                                {/* Trust row */}
+                                <div className="mt-6 flex flex-wrap items-center gap-x-6 gap-y-3 text-xs font-medium text-white/70 sm:text-sm">
+
+                                    <div className="flex items-center gap-2">
+                                        <ShieldCheck
+                                            size={15}
+                                            className="text-[#F4A460]"
                                         />
-
-                                        <input
-                                            type="text"
-                                            value={searchTerm}
-                                            onChange={(e) =>
-                                                setSearchTerm(
-                                                    e.target.value
-                                                )
-                                            }
-                                            placeholder={t(
-                                                "home.searchPlaceholder"
-                                            )}
-                                            className="w-full bg-transparent py-2 text-sm font-medium text-[#2D1B0E] outline-none placeholder:text-[#8A7A6A]"
-                                        />
+                                        <span>Verified Listings</span>
                                     </div>
 
-                                    <button
-                                        type="button"
-                                        onClick={handleSearch}
-                                        className="flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-[#B22222] to-[#8B1A1A] px-8 py-3.5 font-bold text-white shadow-lg shadow-[#B22222]/30 transition-all hover:scale-[1.02] hover:shadow-xl hover:shadow-[#B22222]/50"
-                                    >
-                                        {t("home.searchButton")}
+                                    <div className="hidden h-3 w-px bg-white/20 sm:block" />
 
-                                        <ArrowRight size={18} />
-                                    </button>
+                                    <div className="flex items-center gap-2">
+                                        <BadgeCheck
+                                            size={15}
+                                            className="text-[#F4A460]"
+                                        />
+                                        <span>Trusted Sellers</span>
+                                    </div>
+
+                                    <div className="hidden h-3 w-px bg-white/20 sm:block" />
+
+                                    <div className="flex items-center gap-2">
+                                        <Headphones
+                                            size={15}
+                                            className="text-[#F4A460]"
+                                        />
+                                        <span>24/7 Support</span>
+                                    </div>
                                 </div>
-                            </div>
-
-                            <div className="mt-4 flex items-center gap-4">
-                                <span className="text-sm font-medium text-white/70" />
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div className="absolute bottom-8 right-8 z-10 hidden rounded-2xl border border-[#F4A460]/20 bg-white/95 px-5 py-3 shadow-xl backdrop-blur-sm md:block">
+                {/* Active users card - bottom right */}
+                <div className="absolute bottom-8 right-8 z-10 hidden rounded-2xl border border-white/10 bg-black/40 px-5 py-3.5 shadow-2xl backdrop-blur-xl xl:block">
 
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-4">
 
-                        <div className="flex -space-x-2">
-                            <div className="h-8 w-8 rounded-full border-2 border-white bg-[#B22222] shadow" />
-                            <div className="h-8 w-8 rounded-full border-2 border-white bg-[#F4A460] shadow" />
-                            <div className="h-8 w-8 rounded-full border-2 border-white bg-[#8B1A1A] shadow" />
+                        <div className="flex -space-x-2.5">
+                            <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#1A0A0A] bg-gradient-to-br from-[#B22222] to-[#8B1A1A] text-[10px] font-bold text-white">
+                                JM
+                            </div>
+                            <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#1A0A0A] bg-gradient-to-br from-[#F4A460] to-[#D4833A] text-[10px] font-bold text-white">
+                                FB
+                            </div>
+                            <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#1A0A0A] bg-gradient-to-br from-[#8B1A1A] to-[#B22222] text-[10px] font-bold text-white">
+                                AK
+                            </div>
+                            <div className="flex h-9 w-9 items-center justify-center rounded-full border-2 border-[#1A0A0A] bg-white/10 text-[10px] font-bold text-white backdrop-blur-sm">
+                                +1K
+                            </div>
                         </div>
 
-                        <div>
-                            <p className="text-sm font-bold text-[#2D1B0E]">
-                                1,200+
+                        <div className="border-l border-white/15 pl-4">
+                            <p className="text-xs font-bold text-white">
+                                1,200+ Active Now
                             </p>
-
-                            <p className="text-xs text-[#8A7A6A]">
+                            <p className="text-[10px] text-white/50">
                                 {t("home.activeUsers")}
                             </p>
                         </div>
@@ -1083,7 +1138,6 @@ function Home() {
                             rating={5}
                         />
 
-
                         <TestimonialCardRed
                             quote={t("home.testimonialsData.michael.quote")}
                             author="Francis Bahati."
@@ -1157,7 +1211,6 @@ function Home() {
                 <div id="hp-widget-vertical_feed"></div>
             </section>
 
-         
             {/* =========================================================
                 HELLOPETER WIDGET SCRIPT
             ========================================================= */}
@@ -1230,24 +1283,6 @@ function Home() {
                     `,
                 }}
             />
-
-            <style>
-                {`
-                    @keyframes float {
-                        0%, 100% {
-                            transform: translateY(0);
-                        }
-
-                        50% {
-                            transform: translateY(-10px);
-                        }
-                    }
-
-                    .animate-float {
-                        animation: float 6s ease-in-out infinite;
-                    }
-                `}
-            </style>
         </div>
     );
 }
@@ -1430,4 +1465,3 @@ function TestimonialCardRed({
 }
 
 export default Home;
-

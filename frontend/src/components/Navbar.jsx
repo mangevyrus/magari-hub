@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
@@ -259,12 +258,12 @@ function Navbar() {
                     </Link>
 
                     {/* ==================================================
-                        ORDERS
+                        ORDERS — NO BORDER BOX
                     ================================================== */}
 
                     <Link
                         to="/orders"
-                        className="inline-flex items-center gap-2 rounded-xl border border-blue-100 bg-white px-4 py-2.5 text-sm font-bold text-[#12395B] transition hover:bg-[#EAF6FF] hover:text-[#2F80C0]"
+                        className="text-sm font-bold text-[#12395B] transition hover:text-[#2F80C0]"
                     >
                         {t("nav.viewOrders")}
                     </Link>
@@ -294,7 +293,7 @@ function Navbar() {
                                 type="button"
                                 onClick={handleLogout}
                                 disabled={loggingOut}
-                                className="flex items-center gap-2 rounded-xl bg-red-50 px-4 py-2.5 text-sm font-bold text-red-500 transition hover:bg-red-100 disabled:cursor-not-allowed disabled:opacity-60"
+                                className="flex items-center gap-2 text-sm font-bold text-red-500 transition hover:text-red-600 disabled:cursor-not-allowed disabled:opacity-60"
                             >
                                 <LogOut size={17} />
 
@@ -322,7 +321,7 @@ function Navbar() {
 
                             <Link
                                 to="/register"
-                                className="rounded-xl bg-[#12395B] px-4 py-2.5 text-sm font-bold text-white transition hover:bg-[#2F80C0]"
+                                className="text-sm font-bold text-[#12395B] transition hover:text-[#2F80C0]"
                             >
                                 {t("nav.register")}
                             </Link>
