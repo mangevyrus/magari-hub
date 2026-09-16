@@ -31,9 +31,11 @@ import AdminBrands from "./pages/dashboard/AdminBrands";
 import AccountSettings from "./pages/account/AccountSettings";
 import SellCar from "./pages/vehicles/SellCar";
 import Footer from "./components/Footer";
+import ScrollToTop from "./components/ScrollToTop";
 function App() {
     return (
         <BrowserRouter>
+        <ScrollToTop />
             <Routes>
 
                 {/* ================================================= */}
